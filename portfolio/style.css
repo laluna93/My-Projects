@@ -1,0 +1,115 @@
+/* для заголовков шрифт с засечками Merriweather, bold font-weight: 700 */
+/* для основного текста страницы шрифт без засечек Inter, regular font-weight: 400 и bold font-weight: 700. */
+
+@font-face {
+    font-family: Inter;
+     src: url("assets/fonts/Inter-Regular.ttf");
+   }
+   @font-face {
+    font-family: Merriweather;
+    src: url("assets/fonts/Merriweather-Regular.ttf");
+    font-weight: 700;
+  }
+  @font-face {
+    font-family: Merriweather-Bold;
+    src: url("assets/fonts/Merriweather-Bold.ttf");
+    font-weight: 300;
+  }
+
+body {
+margin: 0 auto;
+background-image: url(assets/img/bg.jpg); 
+background-position: center;
+background-repeat: no-repeat;
+background-color: black;
+width: 1440px;
+height: 910px;
+}
+.container-menu{
+    display: flex;
+    height: 90px;
+    width: 1440px;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
+}
+
+.menu-left{
+    margin: 0 auto;
+    display: flex;
+    width: 50px;
+    height: 50px;
+    padding-left: 12px;
+    align-items: center;
+}
+
+.logo{
+    background-image: url('./assets/svg/logo1.svg');
+    background-size: contain;
+    background-repeat: no-repeat;  
+    transition: 0.3s;
+}
+.logo:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+      contrast(87%);
+  }
+
+  .menu-right{
+      width: 439px;
+      height: 50px;
+      font-family: Inter;
+      font-weight: 400;
+      font-size: 20px;
+      color: #ffff;
+      display: flex;
+      padding-left: 810px;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 auto;
+      list-style: none;
+  }
+  .menu-lang{
+      width: 70px;
+      height: 50px;
+      font-family: Inter;
+      font-weight: 700;
+      color: #ffff;
+      display: flex;
+      justify-content: space-between;
+      font-size: 20px;
+      padding-right: 20px;
+      padding-left: 31px;
+      align-items: center;
+      margin: 0;
+      list-style: none;
+  }
+  .hero-container{
+      height: 330px;
+      width: 500px;
+      margin-top: 160px;
+      margin-right: 860px;
+      margin-left: 80px;
+      margin-bottom: 330px;
+      padding: 0 20px;
+  }
+
+  h1{
+      color: #ffff;
+      font-size: 60px;
+      font-weight: bold;
+      font-family: Merriweather-Bold;
+      font-weight: 700;
+      text-align: left;
+      margin: 0 auto;
+  }
+
+  .hero-text{
+      color: #ffff;
+      font-family: Inter;
+      font-weight: 400;
+      font-size: 20px;
+      padding-bottom: 80px;
+      margin: 0 auto;
+  }
+
