@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="butterfly.ico" type="ico">
+    <link rel="icon" href="butterfly.ico" type="image/x-icon">
 </head>
 <body>
-    <header>
+    <header class="header-container">
+        <div class="container">
         <div class="container-menu">
          <!-- картинка фотоаппарата -->
          <div class="menu-left">
-        <img id="hover" class="logo" src="assets/svg/logo1.svg" width="45" height="45" alt="logo-photo">
+        <img id="hover" class="logo" src="assets/svg/logo1.svg" width="50" height="40" alt="logo-photo">
     </div>
         <!--Указать якорь ссылки-->
 <nav>
@@ -26,34 +27,89 @@
 </ul>
 </nav>
 <div class="menu-lang">
-<button>en</button>
-<p>/</p>
-<button>ru</button>
+<button class="button-en">en</button>
+<p><span class="p-lang">/</span></p>
+<button class="button-ru">ru</button>
+</div>
 </div>
 </div>
     </header>
 
     <main>
-        <div class="hero-container">
+             
 <section class="hero-section">
-    <h1>Alexa Rise</h1>
+    <div class="container">
+    <div class="hero-container"> 
+    <h1> Alexa Rise</h1>
     <div class="hero-text">
-        <p>Save sincere emotions, romantic feelings and</p>
-        <p>happy moments of life together with professional</p>
-        <p>photographer Alexa Rise</p>
+       Save sincere emotions, romantic feelings and <br>
+        happy moments of life together with professional <br>
+        photographer Alexa Rise
+    <form class="hero-form">
           <button class="hero-button">Hire me</button>
+        </form>
+    </div>
+    </div>
+</div>
+</section>
+
+
+<section class="skills-section">
+    <div class="container">
+        <div class="skills-container">
+            <!-- обертка -->
+            <div class="title-container">
+                <!-- линия -->
+                <div class="h2-line">
+                    <!-- заголовок -->
+                    <h2 class="section-title">Skills</h2>
+                </div>
+            </div>
+            <!-- карточки -->
+            <!-- <div class="cards-conteiner"> -->
+                <div class="cards-conteiner">
+                <div class="card-1">
+                    <div class="logo1-skills">
+                    <img src="assets/svg/camera1.svg" width="62" height="50" alt="camera">
+                </div>
+                    <h3>Digital photography</h3>
+                    <p class="text-card">High-quality photos in the studio <br> and on the nature</p>
+                </div>
+                <div class="card-2">
+                    <div class="logo2-skills">
+                    <img src="assets/svg/video1.svg" width="60" height="50" alt="video">
+                </div>
+                    <h3>Video shooting</h3>
+                    <p class="text-card">Capture your moments so that <br> they always stay with you</p>
+                </div>
+                <div class="card-3">
+                    <div class="logo3-skills">
+                    <img src="assets/svg/image1.svg" width="66" height="50" alt="image">
+                </div>
+                    <h3>Retouch</h3>
+                    <p class="text-card">I strive to make photography <br> surpass reality</p>
+                </div>
+                <div class="card-4">
+                    <div class="logo4-skills">
+                    <img src="assets/svg/mic1.svg" width="32" height="50" alt="audio">
+                </div>
+                    <h3>Audio</h3>
+                    <p class="text-card">Professional sounds recording <br> for video, advertising, portfolio</p>
+                </div>
+            <!-- </div> -->
+            </div>
+        </div>
     </div>
 </section>
 
-<section class="skills-section">skills</section>
 
-<section class="portfolio-section">portfolio</section>
+<section class="portfolio-section">Portfolio</section>
 
-<section class="video-section">video</section>
+<section class="video-section">Video</section>
 <!-- сверстать изображение и кнопку -->
-<section class="price-section">price</section>
+<section class="price-section">Price</section>
 
-<section class="contacts-section">contacts</section>
+<section class="contacts-section">Contacts</section>
 </div>
     </main>
 
