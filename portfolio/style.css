@@ -42,9 +42,6 @@ body {
   background-image: url('./assets/img/bg.jpg');
   background-position: center -90px;
   background-repeat: no-repeat;
-  height: 660px;
-  padding-top: 160px;
-  padding-left: 80px;
   margin: 0 auto;
 
 }
@@ -156,7 +153,12 @@ body {
   cursor: pointer;
 
 }
-
+ .hero-section{
+  margin: 0 auto;
+  height: 660px;
+  padding-top: 160px;
+  padding-left: 80px;
+ }
 
 h1 {
   color: #ffff;
@@ -182,7 +184,6 @@ h1 {
   line-height: 40px;
   padding-right: 30px;
 }
-
 /* сайте другой размер */
 .hero-button {
   margin: 0 auto;
@@ -201,9 +202,6 @@ h1 {
   margin: 0 auto;
   padding-top: 25px;
 }
-
-
-
 
 .skills-container {
   margin: 0 auto;
@@ -253,8 +251,6 @@ height: 242px;
   padding-top: 60px;
   display: flex;
   flex-wrap: wrap;
- 
- 
 }
 
 h3{
@@ -268,7 +264,9 @@ h3{
   width: 280px;
   height: 40px;
   padding-left: 20px;
+line-height: 40px;
 }
+/* line-height */
 
 .text-card{
   margin: 0;
@@ -335,4 +333,106 @@ padding-left: 40px;
   padding-right: 20px;
 
 }
+
+.porportfolio-section{
+  height: 1500px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.h2-line-portfolio {
+  position: relative;
+  
+  }
+  .h2-line-portfolio::before{
+    content: "";
+    position: absolute;
+    top: 39px;
+    left: 370px;
+    width: 16.5%;
+    height: 2px;
+    background-color:#BDAE82
+  }
+  .h2-line-portfolio::after{
+    content: "";
+    position: absolute;
+    width: 16.5%;
+    height: 2px;
+    right: 370px;
+  bottom: 39px;;
+    background-color:#BDAE82;
+  }
+ 
+  /* меню и 6 картинок */
+  .button-portfolio{
+width: 220px;
+height: 55px;
+background-color:#000000;
+cursor: pointer;
+font-family: Inter;
+color: #bdae82;
+font-size: 20px;
+border: 2px solid #BDAE82;
+padding-left: 5px;
+line-height: 40px;
+text-align: center;
+font-weight: 400;
+  }
+
+  .box-button{
+    display: flex;
+    justify-content: space-between;
+    width: 895px;
+    height: 55px;
+    padding-left: 272px;
+    padding-top: 60px;
+    padding-right: 273px;
+margin: 0 auto;
+
+  }
+.box-foto{
+margin: 0 auto;
+ padding-top: 60px;
+ display: flex;
+ flex-wrap: wrap;
+ align-content: space-between;
+ width: 1400px;
+ gap: 25px;
+
+}
+
+/* .foto1{
+  gap: 25px;
+
+} */
+
+
+/* .foto1{
+margin: 0 auto;
+width: 450px;
+ height:560px;
+}
+
+.foto2, .foto3{
+  padding-left: 25px;
+  margin: 0 auto;
+  width: 450px;
+  height:560px;
+}
+.foto4{
+  width: 450px;
+ height:560px;
+ padding-top: 25px;
+
+}
+
+.foto5, .foto6{
+margin: 0 auto;
+padding-left: 25px;
+width: 450px;
+ height:560px;
+ gap: 25px;
+
+  /* padding-top: 0; */
+  /* padding-bottom: 100px; */
 
