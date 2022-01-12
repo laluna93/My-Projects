@@ -30,7 +30,7 @@ body {
 }
 
 .header-container {
-  background-image: url(assets/img/bg.jpg);
+  background-image: url('./assets/img/bg.jpg');
   background-repeat: no-repeat;
   background-position: center 0;
   margin:0 auto;
@@ -664,3 +664,95 @@ margin-right: 185px;
   margin-right: 43.36px;
 
  }
+
+ .contacts-container {
+  background: url('./assets/img/contacts.jpg');
+  background-size: auto 700px;
+  background-position: center center;
+  margin:0 auto;
+  height: 700px;
+  
+ }
+h2{
+  color: #BDAE82;
+  font-family: Merriweather-Bold;
+  font-weight: 700;
+  font-size: 40px;
+  text-align:end;
+  line-height: 80px;
+ text-align:start ;
+  margin: 0 auto;
+  
+}
+
+
+.contacts-h2{
+  width:450px;
+  padding-top: 60px;
+  padding-bottom: 40px;
+
+}
+
+
+ .contacts-section{
+   width: 450px;
+   height: 445px;
+   display: block;
+  margin-left: auto;
+   padding-right: 20px;
+color: #bdae82;
+
+
+ }
+ ::placeholder {
+  font-family: inherit;
+  color: #bdae82;
+  font-size: 20px;
+  
+}
+
+
+ input{
+  width: 450px;
+font-family: Inter;
+line-height: 40px;
+font-weight: 400;
+font-size: 20px;
+border: 2px solid #bdae82;
+   box-sizing: border-box;
+   padding: 0 auto;
+   padding-top: 5px;
+   padding-left: 20px;
+   margin-bottom: 20px;
+   background: rgba(0, 0, 0, 0.5);
+
+
+ }
+ textarea{
+resize: none;
+font-family: Inter;
+font-size: 20px;
+font-weight: 400;
+line-height: 40px;
+   width: 450px;
+   height: 100px;
+   background: rgba(0, 0, 0, 0.5);
+padding-top: 3px;
+padding-left: 18px;
+box-sizing: border-box;
+ }
+
+
+.button-contacts{
+width: 220px;
+  height: 55px;
+  background-color:#BDAE82;
+  font-size: 20px;
+  line-height: 40px;
+  cursor: pointer;
+  font-family: Inter;
+  color: black;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 30px;
+}
