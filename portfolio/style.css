@@ -1,5 +1,3 @@
-/* для заголовков шрифт с засечками Merriweather, bold font-weight: 700 */
-/* для основного текста страницы шрифт без засечек Inter, regular font-weight: 400 и bold font-weight: 700. */
 
 @font-face {
   font-family: Inter;
@@ -16,6 +14,9 @@
   font-family: Merriweather-Bold;
   src: url("assets/fonts/Merriweather-Bold.ttf");
   font-weight: 300;
+}
+html {
+  scroll-behavior: smooth; 
 }
 
 body {
@@ -44,8 +45,6 @@ body {
   margin: 0 auto;
 
 }
-
-/* Для <header> не используйте позиционирование fixed и sticky, так как это затруднит проверку макета, старайтесь не использовать позиционирование absolute */
 .container-menu {
   display: flex;
   height: 90px;
@@ -57,23 +56,20 @@ body {
   display: flex;
   width: 50px;
   height: 50px;
-  padding-left: 20px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 
 }
 
 .logo {
-  width: auto;
-  height: auto;
+  cursor: pointer;
   background-size: contain;
   background-repeat: no-repeat;
   transition: 0.3s;
 }
 
-.logo:hover {
-  filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
-}
+
 
 .menu-right {
   width: 439px;
@@ -81,36 +77,45 @@ body {
   font-family: Inter;
   font-weight: 400;
   font-size: 20px;
-  color: #ffff;
   display: flex;
-  padding-left: 810px;
+  padding-left: 30px;
   justify-content: space-between;
   align-items: center;
-  margin: 0 auto;
+  margin-left: 780px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   list-style: none;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-right: 31px;
+  color: #ffffff;
+  cursor: pointer;
+
+
+}
+
+a{
+  text-decoration:none;
+  color: #ffffff;
+  transition: 0.3s;
+}
+a:hover{
+  filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
 
 }
 
 .menu-lang {
   width: 70px;
   height: 50px;
-  color: #ffff;
+  color: #ffffff;
   display: flex;
   justify-content: space-between;
   font-size: 20px;
-  padding-right: 20px;
-  padding-left: 31px;
   align-items: center;
-  margin: 0 auto;
-  padding-top: 20px;
-  padding-bottom: 20px;
-
-
+  margin-top: 20px;
+  margin-bottom: 20px;
+margin-right: 20px;
 }
 
-.button-en {
+.btn-en {
   width: 25px;
   height: 50px;
   justify-content: space-between;
@@ -118,17 +123,21 @@ body {
   padding-right: 0;
   background-color: transparent;
   border: 0;
-  color: #bdae82;
+  color: #BDAE82;
   font-size: 20px;
   font-family: Inter;
   font-weight: 700;
   cursor: pointer;
 }
 
+.btn-en:hover{
+  color: #BDAE82;
+}
+
 .p-lang {
   width: 8px;
   height: 50px;
-  color: #ffff;
+  color: #ffffff;
   font-size: 20px;
   font-family: Inter;
   font-weight: 700;
@@ -137,12 +146,12 @@ body {
 
 }
 
-.button-ru {
+.btn-ru {
   width: 22px;
   height: 50px;
   background-color: transparent;
   border: 0;
-  color: #ffff;
+  color: #ffffff;
   font-size: 20px;
   font-family: Inter;
   font-weight: 700;
@@ -150,57 +159,71 @@ body {
   padding-left: 0;
   padding-right: 0;
   cursor: pointer;
+  transition: 0.3s;
 
 }
+
+.btn-ru:hover{
+  color: #BDAE82;
+}
+
  .hero-section{
   margin: 0 auto;
   height: 660px;
   padding-top: 160px;
   padding-left: 80px;
+  padding-right: 860px;
  }
 
 h1 {
-  color: #ffff;
+  width: 500px;
+  height: 120px;
+  color: #ffffff;
   font-size: 60px;
   font-family: Merriweather-Bold;
   font-weight: 700;
   text-align: left;
   margin: 0 auto;
-  height: 120px;
   display: flex;
   align-items: center;
 }
 
 .hero-text {
+  display: block;
+  width: 470px;
   height: 120px;
-  color: #ffff;
+  color: #ffffff;
   font-family: Inter;
   font-weight: 400;
   font-size: 20px;
-  padding-bottom: 80px;
   margin: 0 auto;
-  padding-top: 10px;
+  margin-top: 10px;
   line-height: 40px;
-  padding-right: 30px;
+  margin-right: 30px;
 }
-/* сайте другой размер */
-.hero-button {
+.btn {
   margin: 0 auto;
   width: 220px;
   height: 55px;
-  background-color: #bdae82;
+  background-color: #BDAE82;
+  color: #000000;
   font-family: Inter;
   font-size: 20px;
-  border: 0;
   text-align: center;
   padding: 0;
   cursor: pointer;
+  transition: 0.3s;
+
+}
+.btn:hover{
+  color: #ffffff;
+}
+.hero-btn {
+  margin: 0 auto;
+  margin-top: 25px;
+  margin-right: 280px;
 }
 
-.hero-form {
-  margin: 0 auto;
-  padding-top: 25px;
-}
 
 .skills-container {
   margin: 0 auto;
@@ -216,29 +239,32 @@ h1 {
 
 .title-container{
   margin: 0 auto;
-line-height: 80px;
 overflow-x: hidden;
 padding-top: 100px;
 }
-.h2-line {
+.line {
 position: relative;
+width: 700px;
+height: 80px;
+margin-left: 370px;
+margin-right: 370px;
 
 }
-.h2-line::before{
+.line::before{
   content: "";
   position: absolute;
   top: 39px;
-  left: 370px;
-  width: 19%;
+  left: 426px;
+  width: 39%;
   height: 2px;
   background-color:#BDAE82
 }
-.h2-line::after{
+.line::after{
   content: "";
   position: absolute;
-  width: 19%;
+  width: 39.1%;
   height: 2px;
-  right: 370px;
+  right: 427px;
 bottom: 39px;;
   background-color:#BDAE82;
 }
@@ -248,46 +274,46 @@ bottom: 39px;;
   font-size: 40px;
   font-family: Merriweather-Bold;
   text-align: center;
+  width: 152px;
 }
-
 
 .cards-conteiner{
 height: 242px;
-  padding-top: 60px;
+  margin-top: 60px;
   display: flex;
   flex-wrap: wrap;
+  margin-left: 20px;
+  margin-right: 20px;
 }
-
 h3{
   margin: 0 ;
   font-family: Inter;
   font-weight: 700;
   font-size: 20px;
-  color: #ffff;
+  color: #ffffff;
   text-align: center;
   padding-top: 50px;
   width: 280px;
   height: 40px;
   padding-left: 20px;
-line-height: 40px;
+  line-height: 38px;
+
 }
-/* line-height */
 
 .text-card{
   margin: 0;
-  color: #ffff;
+  color: #ffffff;
   font-family: Inter;
   font-weight: 400;
   font-size: 18px;
   text-align: center;
   width:280px;
   height: 72px;
-  line-height: 35px;
+  line-height: 36px;
 padding-left: 20px;
 padding-top: 20px;
+padding-right: 20px;
 }
-
-
 .logo1-skills{
   width:auto;
   height: auto;
@@ -310,81 +336,98 @@ padding-top: 20px;
   width:auto;
   height: auto;
   padding-left: 144px;
-
+padding-right: 144px;
 }
 
 .card-1{
   width: 320px;
   height: 240px;
-padding-left: 20px;
 }
 
 .card-2{
   width: 320px;
   height: 240px;
-padding-left: 40px;
+margin-left: 40px;
 }
 
 .card-3{
   width: 320px;
   height: 240px;
-  padding-left: 40px;
+  margin-left: 40px;
 
 }
 .card-4{
   width: 320px;
   height: 240px;
-  padding-left: 40px;
-  padding-right: 20px;
+  margin-left: 40px;
 
+}
+
+.section-title-portfolio{
+
+  margin: 0 auto;
+  color: #BDAE82;
+  font-size: 40px;
+  font-family: Merriweather-Bold;
+  text-align: center;
+  width: 220px;
 }
 
 .porportfolio-section{
   height: 1500px;
-  width: 1440px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-.h2-line-portfolio {
+.line-portfolio {
   position: relative;
-  
+  width: 700px;
+  height: 80px;
+  margin-left: 370px;
+  margin-right: 370px;
   }
-  .h2-line-portfolio::before{
+  .line-portfolio::before{
     content: "";
     position: absolute;
     top: 39px;
-    left: 370px;
-    width: 16.5%;
+    left: 460px;
+    width: 34%;
     height: 2px;
     background-color:#BDAE82
   }
-  .h2-line-portfolio::after{
+  .line-portfolio::after{
     content: "";
     position: absolute;
-    width: 16.8%;
+    width: 34%;
     height: 2px;
-    right: 370px;
+    right: 463px;
   bottom: 39px;;
     background-color:#BDAE82;
   }
  
-  .button-portfolio{
+  .btn-portfolio{
 width: 220px;
 height: 55px;
 background-color:#000000;
 cursor: pointer;
 font-family: Inter;
-color: #bdae82;
+color: #BDAE82;
 font-size: 20px;
 border: 2px solid #BDAE82;
 padding-left: 5px;
 line-height: 40px;
 text-align: center;
 font-weight: 400;
+transition: 0.3s;
+
+
   }
 
-  .gold-button-portfolio{
+  .btn-portfolio:hover{
+    color: #ffffff;
+  }
+
+  .activ-btn-portfolio{
     width: 220px;
 height: 55px;
 background-color:#BDAE82;
@@ -394,14 +437,15 @@ text-align: center;
 line-height: 40px;
 cursor: pointer;
 font-family: Inter;
-color: black;
+color: #000000;
 font-weight: 400;
 border: 2px solid #BDAE82;
 
 
   }
 
-  .box-button{
+  .box-btn{
+margin: 0 auto;
     display: flex;
     justify-content: space-between;
     width: 895px;
@@ -409,12 +453,11 @@ border: 2px solid #BDAE82;
     padding-left: 272px;
     padding-top: 60px;
     padding-right: 273px;
-margin: 0 auto;
 
   }
 .box-foto{
 margin: 0 auto;
- padding-top: 60px;
+ margin-top: 60px;
  display: flex;
  flex-wrap: wrap;
  align-content: space-between;
@@ -424,53 +467,72 @@ margin: 0 auto;
 }
 
 .video-section{
-  width: 1440px;
   height: 945px;
   
 }
 
+.section-title-video{
+  margin: 0 auto;
+  color: #BDAE82;
+  font-size: 40px;
+  font-family: Merriweather-Bold;
+  text-align: center;
+  width: 154px;
+}
+
   .video-player{
   padding-top: 60px;
- gap: 25px;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
 }
-.video-button{
+.video-btn{
 position: absolute;
 background-color: transparent;
 cursor: pointer;
 border: 0;
 display: block;
+padding: 0;
+transition: 0.3s;
+
+}
+
+.video-btn:hover{
+  filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+  
 }
 
 .price-section{
-  width: 1440px;
+  width:1440px;
   height: 845px;
 }
 
-
-.h2-line-price{
+.line-price{
   position: relative;
-
+  width: 700px;
+  height: 80px;
+  margin-left: 370px;
+  margin-right: 370px;
 }
-  .h2-line-price::before{
+  .line-price::before{
     content: "";
     position: absolute;
-    top: 40px;
-    left: 370px;
-    width: 19.3%;
+    top: 39px;
+    left: 420px;
+    width: 40%;
     height: 2px;
     background-color:#BDAE82
   }
-  .h2-line-price::after{
+  .line-price::after{
     content: "";
     position: absolute;
-    width: 19.3%;
+    width: 40%;
     height: 2px;
-    right: 370px;
-  bottom: 38px;;
+    right: 420px;
+  bottom: 39px;
     background-color:#BDAE82;
   }
   .section-title-price {
@@ -479,36 +541,56 @@ display: block;
     font-size: 40px;
     font-family: Merriweather-Bold;
     text-align: center;
+    width: 102px;
+    
   }
 
  .cards-price{
-   width: 1400px;
+   width:1400px;
    height: 505px;
    display: flex;
-  padding: 0 20px;
   justify-content: space-between;
-  /* align-items: center; */
+  align-items:center;
+  margin-top: 60px;
+  margin-left: 20px;
+  margin-right: 20px;
+  box-sizing: border-box;
+
 
 
  }
- .card-price{
+ .card-price1{
 width:450px;
 height: 505px;
-margin-top: 60px;
-gap:25px;
-border: 2px solid #BDAE82;
+border: 1px solid #BDAE82;
   align-items: center;
+  margin-right: 25px;
+  box-sizing: border-box;
+
  }
+ .card-price2{
+  width:450px;
+  height: 505px;
+  border: 1px solid #BDAE82;
+    align-items: center;
+    margin-right: 25px;
+  box-sizing: border-box;
 
+   }
+   .card-price3{
+    width:450px;
+    height: 505px;
+    border: 1px solid #BDAE82;
+      align-items: center;
+  box-sizing: border-box;
 
- 
+     }
 
  .h4-price{
   color: #ffffff;
   font-size: 28px;
   font-family: Merriweather-Bold;
   font-weight: 700;
-  text-align: center;
   line-height: 56px;
   text-align: center;
   margin-top: 43px;
@@ -538,7 +620,7 @@ margin-right: 190px;
  .text-price{
    width:364px;
    height: 180px;
-  color: #ffff;
+  color: #ffffff;
   font-family: Inter;
   font-weight: 400;
   font-size: 18px;
@@ -552,31 +634,16 @@ margin-right: 190px;
  .string-price{
   display: block;
  }
- .button-price{
-  width: 220px;
-  height: 55px;
-  background-color:#BDAE82;
-  font-size: 20px;
-  padding-left: 5px;
-  line-height: 40px;
-  cursor: pointer;
-  font-family: Inter;
-  color: black;
-  font-weight: 400;
-  text-align: center;
- }
- .box-button-price{
+ .box-btn-price{
    margin-top: 40px;
    margin-left: 115px;
    margin-right: 115px;
    margin-bottom: 43px;
- 
  }
-
 .text-price2{
   width:364px;
   height: 180px;
-  color: #ffff;
+  color: #ffffff;
   font-family: Inter;
   font-weight: 400;
   font-size: 18px;
@@ -597,7 +664,7 @@ margin-right: 190px;
   line-height: 56px;
   text-align: center;
   margin-top: 43px;
-width:128px;
+width:132px;
 height: 56px;
 margin-left: 159px;
 margin-right: 159px;
@@ -616,7 +683,7 @@ margin-bottom: 0;
  text-align: center;
  margin-top: 20px;
 margin-left: 191px;
-margin-right: 190px;
+margin-right: 191px;
 }
 
 .h4-price3{
@@ -653,7 +720,7 @@ margin-right: 185px;
  .text-price3{
   width:364px;
   height: 180px;
-  color: #ffff;
+  color: #ffffff;
   font-family: Inter;
   font-weight: 400;
   font-size: 18px;
@@ -685,40 +752,43 @@ h2{
   
 }
 
-
-.contacts-h2{
+.contacts{
+  margin: 0 auto;
   width:450px;
-  padding-top: 60px;
   padding-bottom: 40px;
+  padding-top: 60px;
 
 }
 
-
  .contacts-section{
+  margin: 0 auto;
    width: 450px;
    height: 445px;
    display: block;
   margin-left: auto;
-   padding-right: 20px;
-color: #bdae82;
+   margin-right: 20px;
+color: #BDAE82;
+box-sizing: border-box;
 
 
  }
  ::placeholder {
   font-family: inherit;
-  color: #bdae82;
+  color: #BDAE82;
   font-size: 20px;
   
 }
 
 
  input{
+  margin: 0 auto;
   width: 450px;
 font-family: Inter;
 line-height: 40px;
 font-weight: 400;
 font-size: 20px;
-border: 2px solid #bdae82;
+color: #BDAE82;
+border: 2px solid #BDAE82;
    box-sizing: border-box;
    padding: 0 auto;
    padding-top: 5px;
@@ -729,30 +799,93 @@ border: 2px solid #bdae82;
 
  }
  textarea{
+  margin: 0 auto;
 resize: none;
 font-family: Inter;
 font-size: 20px;
 font-weight: 400;
 line-height: 40px;
+color: #BDAE82;
    width: 450px;
    height: 100px;
    background: rgba(0, 0, 0, 0.5);
-padding-top: 3px;
-padding-left: 18px;
+padding-top: 5px;
+padding-left: 20px;
 box-sizing: border-box;
+border: 2px solid #BDAE82;
+
  }
 
-
-.button-contacts{
+ .box-btn-contacts{
+   padding-top: 30px;
 width: 220px;
-  height: 55px;
-  background-color:#BDAE82;
-  font-size: 20px;
-  line-height: 40px;
-  cursor: pointer;
+height: 55px;
+ }
+
+.footer{
+  height:150px;
+  display: flex;
+  margin: 0 auto;
+}
+
+.footer-left{
+  width: 182px;
+  height: 50px;
+margin: 0 auto;
+margin-left: 20px;
+margin-right: 413px;
+margin-top: 50px;
+}
+
+.text-footer1{
   font-family: Inter;
-  color: black;
+  color: #ffffff;
   font-weight: 400;
-  text-align: center;
-  margin-top: 30px;
+  font-size: 20px;
+  display: inline-block;
+  padding-left: 19px;
+  line-height: 50px;
+  width: 49px;
+  height: 50px;
+}
+.text-footer2{
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 20px;
+  display: inline-block;
+  padding-left: 20px;
+  width: 61px;
+  height: 50px;
+  font-family: Inter;
+}
+
+.footer-center{
+  width: 211px;
+  height: 50px;
+   font-family: Inter;
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 20px;
+  margin: 0 auto;
+  margin-left: 0;
+  line-height: 50px;
+  margin-right: 406px;
+  margin-top: 50px;
+}
+
+.footer-right{
+  width: 188px;
+  height: 50px;
+margin: 0 auto;
+margin-top: 50px;
+margin-right: 20px;
+
+}
+.footer-menu{
+   display: flex;
+   justify-content: space-between; 
+   align-items: center;
+   margin: 0;
+   padding: 0;
+   margin-top: 9px;
 }
