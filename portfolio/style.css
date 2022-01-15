@@ -213,6 +213,7 @@ h1 {
   padding: 0;
   cursor: pointer;
   transition: 0.3s;
+  border: 0;
 
 }
 .btn:hover{
@@ -440,7 +441,11 @@ font-family: Inter;
 color: #000000;
 font-weight: 400;
 border: 2px solid #BDAE82;
+transition: 0.3s;
 
+  }
+  .activ-btn-portfolio:hover{
+    color: #ffffff;
 
   }
 
