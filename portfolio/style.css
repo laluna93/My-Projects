@@ -1507,6 +1507,7 @@ margin-right: 20px;
 position: relative;
   cursor:pointer;
   display: none;
+  z-index: 11;
 }
 .span{
   left:0;
@@ -1593,13 +1594,16 @@ justify-content: flex-start;
   height: 100%;
 background: #000000;
 z-index: 10;
-transform: translateX(100%);
+transform: translateX(620px);
 transition: 0.5s all linear;
 
 margin-left: 148px;
 }
 .menu-nav.active{
-transform: translateX(0);
+transform: translateX();
+z-index: 10;
+
+
 
 }
 
@@ -1611,7 +1615,7 @@ height: 50px;
 position: absolute;
 top:20px;
 right: 64px;
-z-index: 11;
+z-index: -11;
 }
 .close-line1{
   width:100%;
