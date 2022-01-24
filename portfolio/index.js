@@ -2,21 +2,17 @@
 
 const burg = document.querySelector('.burg'),
 navMenu = document.querySelector('.menu-nav'),
-close = document.querySelector('.close')
+navLinks = document.querySelectorAll('.t-li');
 burg.addEventListener('click', () => { 
     burg.classList.toggle("active");
     console.log("a");
     navMenu.classList.toggle("active");
     console.log("1");
-
 })
-
-close.addEventListener('click', () => { 
-    navMenu.classList.toggle("active");
-    console.log("a");
-    // burg.classList.toggle("display-none");
-    // console.log("a");
-})
-
-
-
+navMenu.addEventListener('click', closeMenu)
+  
+function closeMenu(event) {
+    if (event.target.classList.contains('t-li')) {
+        navMenu.classList.remove('active');
+    }
+  }
