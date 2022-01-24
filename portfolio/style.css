@@ -141,9 +141,15 @@ width: 768px;
   font-weight: 400;
   font-size: 20px;
   color: #ffffff;
+<<<<<<< portfolio-part2
 
 }
 
+=======
+
+}
+
+>>>>>>> portfolio
 /* 
 @media (max-width: 768px) {
   .menu-right{
@@ -1594,13 +1600,24 @@ justify-content: flex-start;
   height: 100%;
 background: #000000;
 z-index: 10;
+<<<<<<< portfolio-part2
 transform: translateX(100%);
+=======
+transform: translateX(620px);
+>>>>>>> portfolio
 transition: 0.5s all linear;
 
 margin-left: 148px;
 }
 .menu-nav.active{
+<<<<<<< portfolio-part2
 transform: translateX(0);
+=======
+transform: translateX();
+z-index: 10;
+
+
+>>>>>>> portfolio
 
 }
 
