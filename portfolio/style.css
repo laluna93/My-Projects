@@ -142,8 +142,6 @@ width: 768px;
   font-size: 20px;
   color: #ffffff;
 
-}
-
 /* 
 @media (max-width: 768px) {
   .menu-right{
@@ -167,8 +165,8 @@ display: none;
     
   }
 } */
-
-a{
+}
+a {
   text-decoration:none;
   color: #ffffff;
   transition: 0.3s;
@@ -1594,13 +1592,13 @@ justify-content: flex-start;
   height: 100%;
 background: #000000;
 z-index: 10;
-transform: translateX(100%);
+
 transition: 0.5s all linear;
 
 margin-left: 148px;
 }
 .menu-nav.active{
-transform: translateX(0);
+
 
 }
 
