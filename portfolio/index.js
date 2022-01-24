@@ -5,11 +5,9 @@ burg.addEventListener('click', () => {
     console.log("1");
     
 })
-
 const menu = document.querySelector('.menu-nav')
 menu.addEventListener('click', () => { 
     menu.classList.toggle("active");
     console.log("1");
     
 })
-
