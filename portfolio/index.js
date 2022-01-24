@@ -1,9 +1,15 @@
 'use strict'
-let humb = document.querySelector('.span-burg'),
-menu = document.querySelector(".box-menu"),
-closes = document.querySelector(".сlose");
-humb.addEventListener('click', () => {
-    menu.classList.add("active");
-});
+const burg = document.querySelector('.burg')
+burg.addEventListener('click', () => { 
+    burg.classList.toggle("active");
+    console.log("1");
+    
+})
 
+const menu = document.querySelector('.menu-nav')
+menu.addEventListener('click', () => { 
+    menu.classList.toggle("active");
+    console.log("1");
+    
+})
 
