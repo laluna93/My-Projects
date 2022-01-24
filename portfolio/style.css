@@ -142,7 +142,6 @@ width: 768px;
   font-size: 20px;
   color: #ffffff;
 
-}
 
 /* 
 @media (max-width: 768px) {
@@ -168,7 +167,6 @@ display: none;
   }
 } */
 
-a{
   text-decoration:none;
   color: #ffffff;
   transition: 0.3s;
@@ -1594,18 +1592,6 @@ justify-content: flex-start;
   height: 100%;
 background: #000000;
 z-index: 10;
-transform: translateX(620px);
-transition: 0.5s all linear;
-
-margin-left: 148px;
-}
-.menu-nav.active{
-transform: translateX();
-z-index: 10;
-
-
-
-}
 
 
 
@@ -1643,4 +1629,4 @@ z-index: -11;
 
 
 
-}
+
