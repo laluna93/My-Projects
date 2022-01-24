@@ -1592,15 +1592,10 @@ justify-content: flex-start;
   height: 100%;
 background: #000000;
 z-index: 10;
-
 transition: 0.5s all linear;
-
 margin-left: 148px;
 }
-.menu-nav.active{
 
-
-}
 
 
 
