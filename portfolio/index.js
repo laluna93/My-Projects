@@ -2,17 +2,19 @@
 
 const burg = document.querySelector('.burg'),
 navMenu = document.querySelector('.menu-nav'),
-navLinks = document.querySelectorAll('.t-li');
+navLinks = document.querySelectorAll('.t-li'),
+menuRight = document.querySelector('.menu-right');
 burg.addEventListener('click', () => { 
     burg.classList.toggle("active");
     console.log("a");
-    navMenu.classList.toggle("active");
-    console.log("1");
+    navMenu.classList.toggle("nav2");
+    menuRight.classList.toggle("visibale-none");
+    console.log(menuR);
 })
-navMenu.addEventListener('click', closeMenu)
-  
-function closeMenu(event) {
-    if (event.target.classList.contains('t-li')) {
-        navMenu.classList.remove('active');
-    }
+  for(let i =0; i < navLinks.length; i++){
+    navLinks[i].addEventListener('click', () => {
+      navMenu.classList.toggle("nav2");
+    burg.classList.toggle("active");
+
+    })
   }
