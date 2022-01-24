@@ -1507,6 +1507,7 @@ margin-right: 20px;
 position: relative;
   cursor:pointer;
   display: none;
+  z-index: 11;
 }
 .span{
   left:0;
@@ -1611,7 +1612,7 @@ height: 50px;
 position: absolute;
 top:20px;
 right: 64px;
-z-index: 11;
+z-index: -11;
 }
 .close-line1{
   width:100%;
