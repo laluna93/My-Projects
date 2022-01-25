@@ -14,6 +14,8 @@ burg.addEventListener('click', () => {
   for(let i =0; i < navLinks.length; i++){
     navLinks[i].addEventListener('click', () => {
       navMenu.classList.toggle("nav2");
+    menuRight.classList.toggle("visibale-none");
+
     burg.classList.toggle("active");
 
     })
