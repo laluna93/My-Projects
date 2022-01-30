@@ -1,8 +1,5 @@
 
 'use strict'
-
-
-
 const burg = document.querySelector('.burg'),
 navMenu = document.querySelector('.menu-nav'),
 navLinks = document.querySelectorAll('.t-li'),
@@ -22,14 +19,11 @@ burg.addEventListener('click', () => {
 
     })
   }
-
-
   // изображение
   const portfolioBtn = document.querySelector('.btn-portfolio');
 const portfolioImage = document.querySelector('.img');
  const portfolioBtns = document.querySelector(".box-btn");
  const portfolioImages = document.querySelectorAll(".img");
- const activBtn = document.querySelectorAll(".btn-portfolio");
 
 portfolioBtns.addEventListener("click", (event) => 
  {
@@ -45,7 +39,25 @@ portfolioBtns.addEventListener("click", (event) =>
 
     }
   }
+// анимация кнопок
+// const activHero = document.querySelector(".btn");
+//   activHero.addEventListener('click',() => {
+//       activHero.classList.toggle('active')
+//       console.log("1")
+// })
+// const activPrices= document.querySelectorAll('.btnp')
+// activPrices.forEach(item => {
+// item.addEventListener('click',() => {
+//     for(let i = 0; i< activPrices.length; i++){
+//     activPrices[i].classList.remove('active')
+//     console.log("1")
+//       }
+//       item.classList.add("active");
 
+
+//   })
+// })
+const activBtn = document.querySelectorAll(".btn-portfolio");
   activBtn.forEach(item => {
 item.addEventListener("click", () => {
   for(let i =0; i < activBtn.length; i++){
@@ -54,6 +66,13 @@ item.addEventListener("click", () => {
   item.classList.add("active")
 })
 })
+
+// const activCont = document.querySelector(".btnc");
+//   activCont.addEventListener('click',() => {
+//       activCont.classList.toggle('active')
+//       console.log("1")
+// })
+
 
 // theme
 const theme = document.querySelector('.theme');
@@ -80,7 +99,7 @@ value.classList.toggle("light-theme")
 })
 
 // кнопки языка
-const lang = document.querySelectorAll(".menu-lang");
+const lang = document.querySelector(".menu-lang");
 const activLang = document.querySelectorAll(".btn-l")
 activLang.forEach(i => {
   i.addEventListener("click", () => {
@@ -90,37 +109,35 @@ activLang.forEach(i => {
     i.classList.add('active')
     })
 })
-lang.addEventListener("click", getTranslate);  
-// перевод
-function getTranslate(event){
+lang.addEventListener("click", (event) =>{
 let langs = event.target.dataset.lang;
+if (event.target.classList.contains('btn-l')){
+getTranslate(langs)
+}
+});  
+function getTranslate(langs){
 const clOb = document.querySelectorAll("[data-i18]")
 clOb.forEach(item => {
-// if(i18Obj == item){
-item.textContent = i18Obj[langs][langs]
-console.log(langs, clOb)
-// }
+item.textContent = i18Obj[langs][item.dataset.i18]
+item.placeholder =i18Obj[langs][item.dataset.i18]
+
+console.log(langs, clOb);
 })
   }
-  
-  // 
-  //  = получить у объекта i18Obj данные вложенного объекта (ru или en), 
-  // данные для конкретного элемента, который нужно перевести
+  lang.addEventListener("click", (event) =>{
+    let langs = event.target.dataset.lang;
+    if (event.target.classList.contains('btn-l')){
+      getLocalStorage(langs)
+    }
+    });
 
-// }
-
-
-
-// let logo = document.querySelector(".logo")
-// if(value == ".light-theme"){
-//   logo.setAttribute("src", "logoBlack.svg")
-// }
-
-// activBtn.forEach(item => {
-//   item.addEventListener("click", () => {
-// for(let i = 0; i < arrayTheme.length; i++){
-// arrayTheme.classList.toggle("white");
-
+  function getLocalStorage(langs) {
+    if(localStorage.getItem('.menu-lang')) {
+      const lang = localStorage.getItem('.menu-lang');
+      getTranslate(lang);
+    }
+  }
+  window.addEventListener('load', getLocalStorage)
 
 
 const i18Obj = {
@@ -162,7 +179,10 @@ const i18Obj = {
     'price-description-3-span-5': 'Make up, visage, hairstyle',
     'order': 'Order shooting',
     'contact-me': 'Contact me',
-    'send-message': 'Send message'
+    'send-message': 'Send message',
+    'placeholder': 'Message',
+    'mail':'E-mail',
+'telep': 'Phone'
   },
   'ru': {
     'skills': 'Навыки',
@@ -202,6 +222,10 @@ const i18Obj = {
     'price-description-3-span-5': 'Макияж, визаж, прическа',
     'order': 'Заказать съемку',
     'contact-me': 'Свяжитесь со мной',
-    'send-message': 'Отправить'
+    'send-message': 'Отправить',
+    'placeholder': 'Сообщение',
+    'mail':'Почта',
+'telep': 'Телефон'
+
   }
 }
