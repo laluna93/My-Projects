@@ -1,9 +1,67 @@
-
 'use strict'
 const burg = document.querySelector('.burg'),
 navMenu = document.querySelector('.menu-nav'),
 navLinks = document.querySelectorAll('.t-li'),
-menuRight = document.querySelector('.menu-right');
+menuRight = document.querySelector('.menu-right'),
+portfolioBtn = document.querySelector('.btn-portfolio'),
+portfolioImage = document.querySelector('.img'),
+portfolioBtns = document.querySelector(".box-btn"),
+portfolioImages = document.querySelectorAll(".img"),
+activBtn = document.querySelectorAll(".btn-portfolio");
+let theme = document.querySelector('.theme'),
+btnLang = document.querySelector('.en');
+let lang = document.querySelector(".menu-lang");
+let activLang = document.querySelectorAll(".btn-l");
+let themes = 'dark';
+let langs = 'ru';
+let bt = 'ru'
+// localStorage
+function setLocalStorage() {
+  localStorage.setItem('langs', langs); 
+  localStorage.setItem('themes', dark);
+
+}
+window.addEventListener('beforeunload', setLocalStorage)
+
+function getLocalStorage() {
+  if(localStorage.getItem('langs')) {
+   langs = localStorage.getItem('langs');
+    getTranslate(langs);
+    
+  }
+  if (langs === 'ru') { 
+      activLang.forEach(item =>
+         item.classList.toggle('active'));
+         } 
+}
+window.addEventListener('load', getLocalStorage)
+
+theme.addEventListener("click", ()=>{
+  theme.classList.toggle("active");
+  if( theme.classList.toggle("active")){
+  document.getElementById("moon").src="./assets/svg/carbon_sun.svg"
+  }else{
+    document.getElementById("moon").src="./assets/svg/VectorMoon.svg"
+  }
+})
+
+theme.addEventListener('click', () =>{
+  getactiveTheme()
+})
+
+function getactiveTheme(){
+  theme.classList.toggle("active");
+  let arrayTheme = ["body", "header", "container", "section", "footer"]
+ for(let key in arrayTheme){
+  for(let i = 0; i < arrayTheme.length; i++){
+   let value = document.querySelector(arrayTheme[key])
+value.classList.toggle("light-theme")
+}
+}
+}
+
+
+// бургер-меню
 burg.addEventListener('click', () => { 
     burg.classList.toggle("active");
     console.log("a");
@@ -20,11 +78,6 @@ burg.addEventListener('click', () => {
     })
   }
   // изображение
-  const portfolioBtn = document.querySelector('.btn-portfolio');
-const portfolioImage = document.querySelector('.img');
- const portfolioBtns = document.querySelector(".box-btn");
- const portfolioImages = document.querySelectorAll(".img");
-
 portfolioBtns.addEventListener("click", (event) => 
  {
   changeImage(event)
@@ -35,29 +88,9 @@ portfolioBtns.addEventListener("click", (event) =>
       let btnSeason =event.target.dataset.season;
       portfolioImages.forEach((img, index) =>
   {img.src =`./assets/img/${btnSeason}/${index + 1}.jpg`});
-
-
     }
   }
-// анимация кнопок
-// const activHero = document.querySelector(".btn");
-//   activHero.addEventListener('click',() => {
-//       activHero.classList.toggle('active')
-//       console.log("1")
-// })
-// const activPrices= document.querySelectorAll('.btnp')
-// activPrices.forEach(item => {
-// item.addEventListener('click',() => {
-//     for(let i = 0; i< activPrices.length; i++){
-//     activPrices[i].classList.remove('active')
-//     console.log("1")
-//       }
-//       item.classList.add("active");
 
-
-//   })
-// })
-const activBtn = document.querySelectorAll(".btn-portfolio");
   activBtn.forEach(item => {
 item.addEventListener("click", () => {
   for(let i =0; i < activBtn.length; i++){
@@ -67,79 +100,62 @@ item.addEventListener("click", () => {
 })
 })
 
-// const activCont = document.querySelector(".btnc");
-//   activCont.addEventListener('click',() => {
-//       activCont.classList.toggle('active')
-//       console.log("1")
-// })
-
 
 // theme
-const theme = document.querySelector('.theme');
-theme.addEventListener("click", () => {
-  theme.classList.toggle("active");
-  let arrayTheme = ["body", "header", "container", "section", "footer"]
- for(let key in arrayTheme){
-  for(let i = 0; i < arrayTheme.length; i++){
-   let value = document.querySelector(arrayTheme)
-value.classList.toggle("light-theme")
-  } 
- }
-})
-const theme2 = document.querySelector('.theme2');
-theme2.addEventListener("click", () => {
-  theme2.classList.toggle("active");
-  let arrayTheme = ["body", "header", "container", "section", "footer"]
- for(let key in arrayTheme){
-  for(let i = 0; i < arrayTheme.length; i++){
-   let value = document.querySelector(arrayTheme)
-value.classList.toggle("light-theme")
-  } 
- }
-})
+// theme.addEventListener("click", () => {
+//   theme.classList.toggle("active");
+//   let arrayTheme = ["body", "header", "container", "section", "footer"]
+//  for(let key in arrayTheme){
+//   for(let i = 0; i < arrayTheme.length; i++){
+//    let value = document.querySelector(arrayTheme)
+// value.classList.toggle("light-theme")
+//   } 
+//  }
+// })
+// const theme2 = document.querySelector('.theme2');
+// theme2.addEventListener("click", () => {
+//   theme2.classList.toggle("active");
+//   let arrayTheme = ["body", "header", "container", "section", "footer"]
+//  for(let key in arrayTheme){
+//   for(let i = 0; i < arrayTheme.length; i++){
+//    let value = document.querySelector(arrayTheme)
+// value.classList.toggle("light-theme")
+//   } 
+//  }
+// })
 
-// кнопки языка
-const lang = document.querySelector(".menu-lang");
-const activLang = document.querySelectorAll(".btn-l")
 activLang.forEach(i => {
   i.addEventListener("click", () => {
     for(let i = 0; i < activLang.length; i++){
       activLang[i].classList.remove('active')
     }
     i.classList.add('active')
+    
     })
 })
-lang.addEventListener("click", (event) =>{
-let langs = event.target.dataset.lang;
-if (event.target.classList.contains('btn-l')){
-getTranslate(langs)
-}
-});  
+
+
+
+// lang
 function getTranslate(langs){
 const clOb = document.querySelectorAll("[data-i18]")
 clOb.forEach(item => {
 item.textContent = i18Obj[langs][item.dataset.i18]
 item.placeholder =i18Obj[langs][item.dataset.i18]
 
-console.log(langs, clOb);
+// console.log(langs, clOb);
 })
   }
   lang.addEventListener("click", (event) =>{
-    let langs = event.target.dataset.lang;
-    if (event.target.classList.contains('btn-l')){
-      getLocalStorage(langs)
-    }
-    });
+    langs = event.target.dataset.lang;
 
-  function getLocalStorage(langs) {
-    if(localStorage.getItem('.menu-lang')) {
-      const lang = localStorage.getItem('.menu-lang');
-      getTranslate(lang);
-    }
-  }
-  window.addEventListener('load', getLocalStorage)
+   if (event.target.classList.contains('btn-l')){
+   
+   getTranslate(langs) 
+  localStorage.setItem('langs', langs);
 
-
+   }
+   });  
 const i18Obj = {
   'en': {
     'skills': 'Skills',
