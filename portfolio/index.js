@@ -14,14 +14,13 @@ let lang = document.querySelector(".menu-lang");
 let activLang = document.querySelectorAll(".btn-l");
 
 let dark = '1';
-let langs = 'ru';
+let langs = 'en';
 
 function setLocalStorage() {
   localStorage.setItem('langs', langs); 
   localStorage.setItem('dark', dark);
 }
 
-// window.addEventListener('beforeunload', setLocalStorage)
 
 function getLocalStorage() {
   if(localStorage.getItem('langs')) {
@@ -72,21 +71,8 @@ value.classList.add("light-theme")
  }
 
 
-//   theme.classList.toggle("active");
-//   let arrayTheme = ["body", "header", "container", "section", "footer"]
-//  for(let key in arrayTheme){
-//    let value = document.querySelector(arrayTheme[key])
-// value.classList.toggle("light-theme")
 
-// if( theme.classList.contains("active")){
-//   theme.classList.remove("active")
-//   document.getElementById("moon").src="./assets/svg/carbon_sun.svg"
 
-// }else{
-//   theme.classList.add("active")
-//   document.getElementById("moon").src="./assets/svg/VectorMoon.svg"
-// }
-// }
 }
 
 
@@ -106,7 +92,6 @@ burg.addEventListener('click', () => {
 
     })
   }
-  // изображение
 portfolioBtns.addEventListener("click", (event) => 
  {
   changeImage(event)
@@ -139,13 +124,11 @@ activLang.forEach(i => {
     })
 })
 
-// lang
 function getTranslate(langs){
 const clOb = document.querySelectorAll("[data-i18]")
 clOb.forEach(item => {
 item.textContent = i18Obj[langs][item.dataset.i18]
 item.placeholder =i18Obj[langs][item.dataset.i18]
-
 })
   }
   lang.addEventListener("click", (event) =>{
@@ -200,7 +183,11 @@ const i18Obj = {
     'send-message': 'Send message',
     'placeholder': 'Message',
     'mail':'E-mail',
-'telep': 'Phone'
+'telep': 'Phone',
+'portfol':'Portfolio',
+'vide':'Video',
+'pri':'Price'
+
   },
   'ru': {
     'skills': 'Навыки',
@@ -243,7 +230,10 @@ const i18Obj = {
     'send-message': 'Отправить',
     'placeholder': 'Сообщение',
     'mail':'Почта',
-'telep': 'Телефон'
+'telep': 'Телефон',
+'portfol':'Портфолио',
+'vide':'Видео',
+'pri':'Цена'
 
   }
 }
