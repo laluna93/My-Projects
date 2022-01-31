@@ -18,11 +18,11 @@
    <div class="box-menu">
 <nav class="menu-nav">
 <ul class="menu-right visibale-none">
-    <li class="li"><a class="t-li" href="#skills"> Skills</a></li>  
-    <li class="li"> <a class="t-li" href="#portfolio"> Portfolio</a></li>
-    <li class="li"><a  class="t-li"href="#video"> Video</a></li>
-    <li class="li"><a class="t-li"href="#price"> Price</a></li>
-    <li class="li"><a class="t-li"href="#contact"> Contacts</a></li>
+    <li class="li" ><a data-i18="skills" class="t-li" href="#skills"> Skills</a></li>  
+    <li class="li"> <a data-i18="portfolio" class="t-li" href="#portfolio"> Portfolio</a></li>
+    <li class="li" ><a data-i18="video" class="t-li"href="#video"> Video</a></li>
+    <li class="li" ><a data-i18="price" class="t-li"href="#price"> Price</a></li>
+    <li class="li" ><a data-i18="contacts" class="t-li"href="#contact"> Contacts</a></li>
 </ul>
 </nav>
 </div>
@@ -30,10 +30,13 @@
 
 
 <div class="menu-lang">
-    <button class="btn-en">en</button>
+    <button class="btn-l en active" data-lang="en">en</button>
     <p><span class="p-lang">/</span></p>
-    <button class="btn-ru">ru</button>
+    <button class="btn-l ru  " data-lang="ru">ru</button>
     </div>
+
+<div><button class="theme theme2"><img id="moon" class="img-th" src="./assets/svg/carbon_sun.svg" alt="themeLogo"></button></div>
+<!-- <div><button class="theme2"><img class="img-th" src="./assets/svg/VectorMoon.svg" alt="themeLogo"></button></div> -->
 
     <div class="burg">
         <span class="span span1"></span>
@@ -49,15 +52,15 @@
         <div class="container">
     <div class="hero-container"> 
 <section class="hero-section">
-    <h1>Alexa Rise</h1>
-    <div class="hero-text">
+    <h1 data-i18="hero-title">Alexa Rise</h1>
+    <div class="hero-text" data-i18="hero-text">
        Save sincere emotions, romantic feelings and 
         happy moments of life together with professional 
         photographer Alexa Rise
-    <div class="hero-btn">
-          <button class="btn">Hire me</button>
-        </div>
     </div>
+    <div class="hero-btn">
+        <button class="btn" data-i18='hire'>Hire me</button>
+      </div>
 </section>
 </div>
 
@@ -73,29 +76,29 @@
                     <div class="logo1-skills">
                     <img src="./assets/svg/camera1.svg" width="62" height="50" alt="camera">
                 </div>
-                    <h3 class="h3-card1">Digital photography</h3>
-                    <div class="text-card">High-quality photos in the studio  and on the nature</div>
+                    <h3 class="h3-card1" data-i18="skill-title-1">Digital photography</h3>
+                    <div class="text-card" data-i18="skill-text-1">High-quality photos in the studio  and on the nature</div>
                 </div>
                 <div class="card-2">
                     <div class="logo2-skills">
                     <img src="./assets/svg/video1.svg" width="60" height="50" alt="video">
                 </div>
-                    <h3 class="h3-card2">Video shooting</h3>
-                    <div class="text-card">Capture your moments so that they always stay with you</div>
+                    <h3 class="h3-card2" data-i18="skill-title-2">Video shooting</h3>
+                    <div class="text-card" data-i18="skill-text-2">Capture your moments so that they always stay with you</div>
                 </div>
                 <div class="card-3">
                     <div class="logo3-skills">
                     <img src="./assets/svg/image1.svg" width="66" height="50" alt="image">
                 </div>
-                    <h3 class="h3-card3">Retouch</h3>
-                    <div class="text-card">I strive to make photography surpass reality</div>
+                    <h3 class="h3-card3" data-i18="skill-title-3">Retouch</h3>
+                    <div class="text-card" data-i18="skill-text-3">I strive to make photography surpass reality</div>
                 </div>
                 <div class="card-4">
                     <div class="logo4-skills">
                     <img src="./assets/svg/mic1.svg" width="32" height="50" alt="audio">
                 </div>
-                    <h3 class="h3-card4">Audio</h3>
-                    <div class="text-card">Professional sounds recording for video, advertising, portfolio</div>
+                    <h3 class="h3-card4" data-i18="skill-title-4">Audio</h3>
+                    <div class="text-card" data-i18="skill-text-4">Professional sounds recording for video, advertising, portfolio</div>
                 </div>
             </div>
 </section>
@@ -107,10 +110,10 @@
     <h2 id="portfolio" class="section-title">Portfolio</h2>
 </div>
 <div class="box-btn">
-    <button class="btn-portfolio">Winter</button>
-    <button class="btn-portfolio">Spring</button>
-    <button class="btn-portfolio">Summer</button>
-    <button class="activ-btn-portfolio">Autumn</button>
+    <button class="btn-portfolio" data-season="winter" data-i18="winter">Winter</button>
+    <button class="btn-portfolio" data-season="spring" data-i18="spring">Spring</button>
+    <button class="btn-portfolio" data-season="summer" data-i18="summer">Summer</button>
+    <button class="btn-portfolio active" data-season="autumm" data-i18="autumn">Autumn</button>
 </div>
 <div class="box-foto">
     <div>
@@ -158,14 +161,14 @@
 <h4 class="h4-price">Standard</h4>
 <div class="value">500 $</div>
 <div class="text-price">
-<span class="string-price">One location</span>
-<span class="string-price">120 photos in color</span>
-<span class="string-price">12 photos in retouch</span>
-<span class="string-price">Readiness 2-3 weeks</span>
-<span class="string-price">Make up, visage</span>
+<span class="string-price" data-i18="price-description-1-span-1">One location</span>
+<span class="string-price" data-i18="price-description-1-span-2">120 photos in color</span>
+<span class="string-price" data-i18="price-description-1-span-3">12 photos in retouch</span>
+<span class="string-price" data-i18="'price-description-1-span-4'">Readiness 2-3 weeks</span>
+<span class="string-price" data-i18="price-description-1-span-5">Make up, visage</span>
 </div>
 <div class="box-btn-price">
-<button class="btn">Order shooting</button>
+<button class="btnp" data-i18="order" >Order shooting</button>
 </div>
 </div>
 
@@ -173,14 +176,14 @@
 <h4 class="h4-price2">Premium</h4>
 <div class="value2">700 $</div>
 <div class="text-price2">
-<span class="string-price">One or two locations</span>
-<span class="string-price">200 photos in color</span>
-<span class="string-price">20 photos in retouch</span>
-<span class="string-price">Readiness 1-2 weeks</span>
-<span class="string-price">Make up, visage</span>
+<span class="string-price" data-i18="price-description-2-span-1">One or two locations</span>
+<span class="string-price" data-i18="price-description-2-span-2">200 photos in color</span>
+<span class="string-price" data-i18="price-description-2-span-3">20 photos in retouch</span>
+<span class="string-price" data-i18="price-description-2-span-4">Readiness 1-2 weeks</span>
+<span class="string-price" data-i18="price-description-2-span-5">Make up, visage</span>
 </div>
 <div class="box-btn-price">
-<button class="btn">Order shooting</button>
+<button class="btnp" data-i18="order">Order shooting</button>
 </div>
 </div>
 
@@ -188,14 +191,14 @@
 <h4 class="h4-price3">Gold</h4>
 <div class="value3">1000 $</div>
 <div class="text-price3">
-<span class="string-price">Three locations or more</span>
-<span class="string-price">300 photos in color</span>
-<span class="string-price">50 photos in retouch</span>
-<span class="string-price">Readiness 1 week</span>
-<span class="string-price">Make up, visage, hairstyle</span>
+<span class="string-price" data-i18="price-description-3-span-1">Three locations or more</span>
+<span class="string-price" data-i18="price-description-3-span-2">300 photos in color</span>
+<span class="string-price" data-i18="price-description-3-span-3">50 photos in retouch</span>
+<span class="string-price" data-i18="price-description-3-span-4">Readiness 1 week</span>
+<span class="string-price" data-i18="price-description-3-span-5">Make up, visage, hairstyle</span>
 </div>
 <div class="box-btn-price">
-    <button class="btn">Order shooting</button>
+    <button class="btnp" data-i18="order">Order shooting</button>
     </div>
 </div>
 </div>
@@ -204,15 +207,15 @@
 <div class="contacts-container">
 <section class="contacts-section">
     <div class="contacts">
-    <h2 id="contact">Contact me</h2>
+    <h2 id="contact" data-i18="contact-me">Contact me</h2>
 </div>
     <div>
-    <input type="email" placeholder="E-mail">
-    <input type="tel" placeholder="Phone">
+    <input type="email" placeholder="E-mail"  data-i18="mail">
+    <input type="tel" placeholder="Phone"  data-i18="telep">
 </div>
-    <textarea placeholder="Message"  name="text"  cols="30" rows="10"></textarea>
+    <textarea placeholder="Message"  name="text"  cols="30" rows="10" data-i18="placeholder"></textarea>
     <div class="box-btn-contacts">
-    <button class="btn">Send message</button>
+    <button class="btnc" data-i18="send-message">Send message</button>
 </div>
 </section>
 </div>
@@ -224,16 +227,27 @@
 <div class="footer">
     <div class="footer-left">
 <img class="svg-left"  src="./assets/svg/©.svg"  alt="c">
+<img class="svg-left2"  src="./assets/svg/©b.svg"  alt="c">
+
 <div class="text-footer1">2022</div>
 <div class="text-footer2"><a class="tf" href="https://github.com/laluna93"> github</a></div>
 </div>
 <div class="footer-center"><a class="tf" href="https://rs.school/js-stage0/"> Rolling Scopes School</a></div>
 <div class="footer-right">
+
     <ul class="footer-menu">
-        <li><a href="https://www.instagram.com/instagram/"><img src="./assets/svg/inst1.svg" width="32" height="32"  alt="inst"></a> </li>
-        <li><a href="https://www.facebook.com/"><img src="./assets/svg/fb1.svg" width="32" height="32"  alt="fb"></a></li>
-        <li><a href="https://twitter.com/twitter"><img src="./assets/svg/tw1.svg" width="32" height="32"  alt="tw"></a></li>
-        <li><a href="https://www.pinterest.ru/"><img src="./assets/svg/pinterest1.svg" width="32" height="32" alt="pinterest"></a></li>
+        <li class="li-foot"><a href="https://www.instagram.com/instagram/"><img class="inst" src="./assets/svg/inst1.svg" width="32" height="32"  alt="inst"></a> </li>
+        <li class="li-foot"><a href="https://www.facebook.com/"><img class="fb" src="./assets/svg/fb1.svg" width="32" height="32"  alt="fb"></a></li>
+        <li class="li-foot"><a href="https://twitter.com/twitter"><img class="tw" src="./assets/svg/tw1.svg" width="32" height="32"  alt="tw"></a></li>
+        <li class="li-foot"><a href="https://www.pinterest.ru/"><img class="pint" src="./assets/svg/pinterest1.svg" width="32" height="32" alt="pinterest"></a></li>
+        
+    </ul>
+    <ul class="footer-menu2">
+        <li class="li-foot"><a href="https://www.instagram.com/instagram/"><img class="inst" src="./assets/svg/inst1black.svg" width="32" height="32"  alt="inst"></a> </li>
+        <li class="li-foot"><a href="https://www.facebook.com/"><img class="fb" src="./assets/svg/fb1b.svg" width="32" height="32"  alt="fb"></a></li>
+        <li class="li-foot"><a href="https://twitter.com/twitter"><img class="tw" src="./assets/svg/tw1b.svg" width="32" height="32"  alt="tw"></a></li>
+        <li class="li-foot"><a href="https://www.pinterest.ru/"><img class="pint" src="./assets/svg/pinterest1b.svg" width="32" height="32" alt="pinterest"></a></li>
+        
     </ul>
   
 </div>
