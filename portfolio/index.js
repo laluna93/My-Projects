@@ -12,52 +12,81 @@ let theme = document.querySelector('.theme'),
 btnLang = document.querySelector('.en');
 let lang = document.querySelector(".menu-lang");
 let activLang = document.querySelectorAll(".btn-l");
-let themes = 'dark';
+
+let dark = '1';
 let langs = 'ru';
-let bt = 'ru'
-// localStorage
+
 function setLocalStorage() {
   localStorage.setItem('langs', langs); 
-  localStorage.setItem('themes', dark);
-
+  localStorage.setItem('dark', dark);
 }
-window.addEventListener('beforeunload', setLocalStorage)
+
+// window.addEventListener('beforeunload', setLocalStorage)
 
 function getLocalStorage() {
   if(localStorage.getItem('langs')) {
-   langs = localStorage.getItem('langs');
-    getTranslate(langs);
-    
+    langs = localStorage.getItem('langs');
+     getTranslate(langs);
+}
+if (langs === 'ru') { 
+  activLang.forEach(item =>
+     item.classList.toggle('active'));
   }
-  if (langs === 'ru') { 
-      activLang.forEach(item =>
-         item.classList.toggle('active'));
+  
+         if(localStorage.getItem('dark')){
+          dark = localStorage.getItem('dark')
+          getactiveTheme(dark)
+          
          } 
 }
 window.addEventListener('load', getLocalStorage)
 
-theme.addEventListener("click", ()=>{
-  theme.classList.toggle("active");
-  if( theme.classList.toggle("active")){
-  document.getElementById("moon").src="./assets/svg/carbon_sun.svg"
-  }else{
-    document.getElementById("moon").src="./assets/svg/VectorMoon.svg"
-  }
-})
 
 theme.addEventListener('click', () =>{
-  getactiveTheme()
+ const dark = theme.classList.contains("active") ? '0' : '1'
+
+  getactiveTheme(dark)
+  localStorage.setItem('dark', dark);
+
 })
 
-function getactiveTheme(){
-  theme.classList.toggle("active");
-  let arrayTheme = ["body", "header", "container", "section", "footer"]
- for(let key in arrayTheme){
-  for(let i = 0; i < arrayTheme.length; i++){
-   let value = document.querySelector(arrayTheme[key])
-value.classList.toggle("light-theme")
-}
-}
+function getactiveTheme(dark){
+  let arrayTheme = ["body", "header", ".container", "section", "footer", ".hero-container"]
+ if(dark==='1'){
+  theme.classList.add("active");
+  document.getElementById("moon").src="./assets/svg/carbon_sun.svg"
+arrayTheme.forEach((item) =>{
+  let value = document.querySelector(item)
+  console.log(value)
+value.classList.remove("light-theme")
+})
+ } else{
+  theme.classList.remove("active");
+  document.getElementById("moon").src="./assets/svg/VectorMoon.svg"
+arrayTheme.forEach((item) =>{
+  let value = document.querySelector(item)
+value.classList.add("light-theme")
+})
+ 
+
+ }
+
+
+//   theme.classList.toggle("active");
+//   let arrayTheme = ["body", "header", "container", "section", "footer"]
+//  for(let key in arrayTheme){
+//    let value = document.querySelector(arrayTheme[key])
+// value.classList.toggle("light-theme")
+
+// if( theme.classList.contains("active")){
+//   theme.classList.remove("active")
+//   document.getElementById("moon").src="./assets/svg/carbon_sun.svg"
+
+// }else{
+//   theme.classList.add("active")
+//   document.getElementById("moon").src="./assets/svg/VectorMoon.svg"
+// }
+// }
 }
 
 
@@ -100,30 +129,6 @@ item.addEventListener("click", () => {
 })
 })
 
-
-// theme
-// theme.addEventListener("click", () => {
-//   theme.classList.toggle("active");
-//   let arrayTheme = ["body", "header", "container", "section", "footer"]
-//  for(let key in arrayTheme){
-//   for(let i = 0; i < arrayTheme.length; i++){
-//    let value = document.querySelector(arrayTheme)
-// value.classList.toggle("light-theme")
-//   } 
-//  }
-// })
-// const theme2 = document.querySelector('.theme2');
-// theme2.addEventListener("click", () => {
-//   theme2.classList.toggle("active");
-//   let arrayTheme = ["body", "header", "container", "section", "footer"]
-//  for(let key in arrayTheme){
-//   for(let i = 0; i < arrayTheme.length; i++){
-//    let value = document.querySelector(arrayTheme)
-// value.classList.toggle("light-theme")
-//   } 
-//  }
-// })
-
 activLang.forEach(i => {
   i.addEventListener("click", () => {
     for(let i = 0; i < activLang.length; i++){
@@ -134,8 +139,6 @@ activLang.forEach(i => {
     })
 })
 
-
-
 // lang
 function getTranslate(langs){
 const clOb = document.querySelectorAll("[data-i18]")
@@ -143,7 +146,6 @@ clOb.forEach(item => {
 item.textContent = i18Obj[langs][item.dataset.i18]
 item.placeholder =i18Obj[langs][item.dataset.i18]
 
-// console.log(langs, clOb);
 })
   }
   lang.addEventListener("click", (event) =>{
