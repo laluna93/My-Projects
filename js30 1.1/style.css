@@ -1,0 +1,149 @@
+.menu{
+    background-color: black;
+    display: flex;
+    height:60px;
+    justify-content: space-between;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+.logotip{
+    margin: 0 auto;
+    margin-right: 0;
+    margin-left: 20px;
+    padding-left: 20px;
+    padding-bottom: 50px;
+}
+
+.mbtn.active{
+    color:#BDAE82;
+	transform: translatey(8%);
+    box-shadow: 2px 1px 1px 4px #BDAE82;
+transition: 4s;
+
+}
+
+.main-menu{
+    color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+    list-style-type: none;
+    margin: 0 auto;
+    align-items: center;
+    margin-right: 20px;
+    padding-right: 20px;
+    font-family: roboto;
+    cursor: pointer;
+    justify-content: space-between;
+    margin-left: auto;
+    padding-left: auto;
+    line-height: 50px;
+}
+.main-menu button:hover{
+color:#BDAE82;
+transition: 0.3s;
+}
+.main-menu button{
+    background-color:  transparent;
+border:0;
+color:#ffffff;
+cursor: pointer;
+font-size: 20px;
+line-height: 50px;
+padding-left: auto;
+}
+.main-menu li{
+    padding-left: 20px;
+}
+body{
+    width:100%;
+    background-color:black;
+    margin: 0 auto;
+}
+.hero{
+    background-repeat: no-repeat;
+    width: 100%;
+    align-items:center;
+    display: flex;
+    height: calc(100vh - 120px);
+    background-image:url(./assets/img/solovey.jpg);
+    background-position: center;
+    background-size:cover;
+    justify-content: center;
+}
+
+.btn{
+margin: 0 auto;
+transition: 5s;
+
+}
+.play{
+    background-color:  transparent;
+cursor: pointer;
+border: none;
+}
+.play:hover{
+filter: invert(26%) sepia(15%)  hue-rotate(7deg) brightness(82%)contrast(87%);
+transition: 0.5s;
+}
+
+
+.btn .active{
+	transform: translatey(8%);
+filter: invert(16%) sepia(28%)  hue-rotate(10deg) brightness(135%)contrast(77%);
+border-radius: 30%;
+transition: 2s;
+box-shadow: 1px 1px 1px 10px #BDAE82;
+
+}
+
+ .footer{
+     height:55px;
+    background-color:black;
+margin: 0 auto;
+display: flex;
+justify-content: space-between;
+align-items: center;
+ }
+
+.footer-main{
+margin: 0 auto;
+width: 176px;
+height:40px;
+    display: flex;
+    flex-direction: row;
+    color:#ffffff;
+    margin: 0;
+    justify-content: space-between;
+    margin-left: 20px;
+    align-items: center;
+}
+.footer-main li{
+margin: 0 auto;
+padding-left: 20px;    
+list-style-type: none;
+font-size: 20px;
+    align-items: center;
+}
+.rss{
+    display: flex;
+    margin: 0 auto;
+    margin-right: 40px;
+    width:135px;
+}
+.rss:hover{
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+    contrast(87%);
+transition: 0.3s;
+}
+a{
+    text-decoration: none;
+color:#ffffff
+}
+a:hover{
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+    contrast(87%);
+color:#BDAE82;
+cursor: pointer;
+    transition: 0.3s;
+}
