@@ -7,15 +7,15 @@ const hero = document.querySelector('.hero')
 const audio = new Audio();
 let isPlay = false;
 
-// function playAudio(){
-//             audio.currentTime = 0;
-//             audio.play();
-//             isPlay = false;
-//             console.log("play")
-//             audioBtn.classList.add('active')
-//             audioBtn.classList.remove('pause')
-//         document.getElementById('player').src="./assets/svg/pause.svg"
-// }
+function playAudio(){
+            audio.currentTime = 0;
+            audio.play();
+            isPlay = false;
+            console.log("play")
+            audioBtn.classList.add('active')
+            audioBtn.classList.remove('pause')
+        document.getElementById('player').src="./assets/svg/pause.svg"
+}
  function pauseAudio(){
     audio.pause();
 
