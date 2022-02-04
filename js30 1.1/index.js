@@ -6,7 +6,6 @@ const mbtn = document.querySelectorAll('.mbtn');
 const hero = document.querySelector('.hero')
 const audio = new Audio();
 let isPlay = false;
-
 function playAudio(){
             audio.currentTime = 0;
             audio.play();
@@ -26,7 +25,6 @@ function playAudio(){
     document.getElementById('player').src="./assets/svg/play.svg"
  }
 
-    // audioBtn.addEventListener('click', playAudio);
     audioBtn.addEventListener('click', ()=>{
         audioBtn.classList.toggle('active');
 if(audioBtn.classList.contains('active')){
@@ -40,7 +38,6 @@ if(audioBtn.classList.contains('active')){
 }
     })
 
-
     mbtn.forEach((item) =>{
         item.addEventListener('click',() =>{
         for(let i =0; i < mbtn.length; i++){
@@ -52,7 +49,6 @@ if(audioBtn.classList.contains('active')){
         
     })
 })
-
 
 boxBtn.addEventListener('click', (event) =>{
     boxBtn.classList.toggle('active');
