@@ -72,6 +72,23 @@ body{
     justify-content: center;
 }
 
+.mlogo{
+    background-color:  transparent;
+border:0;
+cursor: pointer;
+}
+.mlogo:hover{
+    color:#BDAE82;
+transition: 0.3s;
+filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+contrast(87%);
+}
+.mlogo.active{
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%);
+transition: 4s;
+
+}
+
 .btn{
 margin: 0 auto;
 transition: 5s;
@@ -86,15 +103,28 @@ border: none;
 filter: invert(26%) sepia(15%)  hue-rotate(7deg) brightness(82%)contrast(87%);
 transition: 0.5s;
 }
-
-
 .btn .active{
 	transform: translatey(8%);
 filter: invert(16%) sepia(28%)  hue-rotate(10deg) brightness(135%)contrast(77%);
 border-radius: 30%;
 transition: 2s;
 box-shadow: 1px 1px 1px 10px #BDAE82;
-
+}
+.sound{
+    color:#ffffff;
+    display: flex;
+    margin: 0;
+    position: fixed;
+    margin-left: 220px;
+    cursor: pointer;
+    transform: rotate(-90deg);
+    
+}
+input{
+    color: #BDAE82;
+border: 2px solid #BDAE82;
+background: rgba(0, 0, 0, 0.5);
+outline: none;
 }
 
  .footer{
