@@ -1,3 +1,4 @@
+
 .menu{
     background-color: black;
     display: flex;
@@ -56,18 +57,17 @@ padding-left: auto;
     padding-left: 20px;
 }
 body{
-    width:100%;
     background-color:black;
-    margin: 0 auto;
 }
 .hero{
+    margin: 0 auto;
     background-repeat: no-repeat;
-    width: 100%;
+    max-width: 1440px;
     align-items:center;
     display: flex;
     height: calc(100vh - 120px);
     background-image:url(./assets/img/solovey.jpg);
-    background-position: center;
+    background-position: center center;
     background-size:cover;
     justify-content: center;
 }
@@ -99,6 +99,7 @@ transition: 5s;
 cursor: pointer;
 border: none;
 }
+
 .play:hover{
 filter: invert(26%) sepia(15%)  hue-rotate(7deg) brightness(82%)contrast(87%);
 transition: 0.5s;
@@ -109,6 +110,11 @@ filter: invert(16%) sepia(28%)  hue-rotate(10deg) brightness(135%)contrast(77%);
 border-radius: 30%;
 transition: 2s;
 box-shadow: 1px 1px 1px 10px #BDAE82;
+}
+
+#player{
+    width: 160px;
+    height: 160px;
 }
 .no-sound{
     display: flex;
@@ -133,6 +139,7 @@ box-shadow: 1px 1px 1px 10px #BDAE82;
         }
 
  .footer{
+     max-width: 1440px;
      height:55px;
     background-color:black;
 margin: 0 auto;
