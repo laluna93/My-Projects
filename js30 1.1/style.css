@@ -110,22 +110,27 @@ border-radius: 30%;
 transition: 2s;
 box-shadow: 1px 1px 1px 10px #BDAE82;
 }
-.sound{
-    color:#ffffff;
+.no-sound{
     display: flex;
     margin: 0;
-    position: fixed;
-    margin-left: 220px;
+    margin-bottom: 25%;
     cursor: pointer;
-    transform: rotate(-90deg);
-    
+    position: absolute;
+    background-color:  transparent;
+    cursor: pointer;
+    border: none;
+    box-shadow: 1px 1px 1px 4px #ffffff;
+    background-color:#ffffff;
+    border-radius:50%
 }
-input{
-    color: #BDAE82;
-border: 2px solid #BDAE82;
-background: rgba(0, 0, 0, 0.5);
-outline: none;
-}
+.no-sound:hover{
+    filter: invert(26%) sepia(15%)  hue-rotate(7deg) brightness(82%)contrast(87%);
+    transition: 0.5s;
+    }
+    .no-sound.active{
+        box-shadow: 1px 1px 1px 4px #00ff22;
+        transition: 1s;
+        }
 
  .footer{
      height:55px;

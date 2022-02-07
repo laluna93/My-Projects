@@ -11,21 +11,19 @@ const mlogo = document.querySelector('.mlogo')
 let isPlay = false;
 
 function playAudio(){
-            // audio.currentTime = 0;
-            // audio.play();
-            // isPlay = false;
             console.log("play")
             audioBtn.classList.add('active')
             audioBtn.classList.remove('pause')
         document.getElementById('player').src="./assets/svg/pause.svg";
 }
  function pauseAudio(){
-    // audio.pause();
-    //     isPlay = true;
         console.log("pause")
         audioBtn.classList.add('pause')
         audioBtn.classList.remove('active')
     document.getElementById('player').src="./assets/svg/play.svg"
+ }
+ function mutedAudio(){
+
  }
 
     audioBtn.addEventListener('click', ()=>{
@@ -38,9 +36,6 @@ if(audioBtn.classList.contains('active')){
         let data = mbtnActive.dataset.menu;
         audio.src =`./assets/audio/${data}.mp3`;
         audio.play();
-// 
-
-
     playAudio()
 }else{
     pauseAudio()
@@ -94,3 +89,19 @@ mlogo.addEventListener('click', () =>{
     }
     audio.play();
 }) 
+
+const noSounds = document.querySelector('.no-sound')
+noSounds.addEventListener('click', () =>{
+    noSounds.classList.toggle('active');
+    
+    
+    if(noSounds.classList.contains('active')){
+     audio.volume = 0
+    document.getElementById('sound').src="./assets/svg/sound.svg"
+
+    } else {
+        audio.volume = 1
+    document.getElementById('sound').src="./assets/svg/mute.svg"
+
+    }
+})
