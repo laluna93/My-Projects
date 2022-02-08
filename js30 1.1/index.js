@@ -82,6 +82,8 @@ mlogo.addEventListener('click', () =>{
     }
     if(mlogo.classList.contains('active')){
         audio.src =`./assets/audio/forest.mp3`;
+        hero.style.backgroundImage =`url(./assets/img/forest.jpg)`;
+        
         boxBtn.classList.remove('active')
     playAudio()
     // }else if (mbtn.classList.contains('active'))
