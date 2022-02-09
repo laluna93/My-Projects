@@ -1,0 +1,113 @@
+
+body{
+    margin: 0 auto;
+    background-color:#000;
+}
+ section{
+    margin: 0 auto;
+display: flex;
+ }
+ .lang{
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-left: 10px;
+    bottom: 65%;
+ }
+.eu{
+    background-color:  transparent;
+border:none;
+cursor: pointer;
+}
+.ru{
+    background-color:  transparent;
+    border:none;
+cursor: pointer;
+
+}
+
+.eu:hover{
+    box-shadow: 1px 2px 4px 5px #ffffff;
+    border:2px solid #ffffff;
+    border-radius: 50px;
+    background-color:#ffffff;
+    transform: translate(15px, -10px)
+    
+
+}
+.ru:hover{
+    box-shadow: 1px 2px 4px 5px #ffffff;
+    border:2px solid #ffffff;
+    border-radius: 50px;
+    background-color:#ffffff;
+    transform: translate(15px, 10px)
+
+}
+
+ .img{
+    background-image:url(assets/img/comics.jpg);
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    align-items:center;
+    display: flex;
+    height: calc(100vh);
+    background-position: center center;
+    background-size:cover;
+    max-width: 1234px;
+width: 100%;
+ }
+
+ .box-btn{
+     max-width: 20%;
+     
+ }
+
+.btn{
+    margin: 0 auto;
+    bottom:10%;
+    left: 35%;
+    right: 35%;
+    width: 20%;
+    height: 12%;
+    background-color: rgb(149, 0, 0);
+    position: absolute;
+    box-shadow: 1px 2px 4px 5px #ffffff;
+cursor: pointer;
+
+    /* border:2px  */
+    /* border: 2px solid #ffffff */
+}
+.btn:hover{
+    background: linear-gradient(165deg, rgb(143, 10, 10), rgb(212, 211, 211));
+    /* transform: translate(0, 10px) */
+}
+
+.b{
+    font-size: 30px;
+    color: #ffffff;
+ 
+}
+
+.text{
+    height: auto;
+    max-width: 50%;
+    background-color:rgb(221, 190, 13);
+    font-size: 30px;
+    color: #000000;
+margin: 0 auto;
+text-align: center;
+border:1px solid rgb(0, 0, 0);
+box-shadow: 1px 2px 4px 5px #000000;
+
+margin-top: 10%;
+}
+
+
+
+
+
+footer{
+    width: 1440px;
+    height: 50px;
+}
