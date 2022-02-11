@@ -1,0 +1,185 @@
+
+body{
+    margin: 0 auto;
+    background-color:#000;
+}
+ section{
+    margin: 0 auto;
+display: flex;
+ }
+ .lang{
+    display: flex;
+    width: 100px;
+    /* position: absolute;
+    padding-bottom: 23%; */
+    margin: 0 auto;
+    margin-left: 0;
+ }
+.btnl{
+    width: 90px;
+    height: 90px;
+}
+
+
+.be{
+    background-color:  transparent;
+border:none;
+cursor: pointer;
+}
+.ru{
+    background-color:  transparent;
+    border:none;
+cursor: pointer;
+padding-left: 10px;
+
+}
+
+.be:hover{
+    box-shadow: 1px 2px 4px 5px #ffffff;
+    border:2px solid #ffffff;
+    border-radius: 50px;
+    background-color:#ffffff;
+    transform: translate(10px, 2px);
+    transition: 0.3s;
+
+}
+.be.active{
+      box-shadow: 1px 2px 4px 5px #ffffff;
+    border:2px solid #ffffff;
+    border-radius: 30%;
+    background-color:#ffffff;
+    /* transform: translate(5px, 5px);
+    transform: rotate(-0deg); */
+    transition: 0.5s;
+    
+}
+
+.ru:hover{
+    box-shadow: 1px 2px 4px 5px #ffffff;
+    border:2px solid #ffffff;
+    border-radius: 50px;
+    background-color:#ffffff;
+    transform: translate(15px, 5px);
+    transition: 0.3s;
+
+
+}
+
+.ru.active{
+    box-shadow: 1px 2px 4px 5px #ffffff;
+    border:2px solid #ffffff;
+    border-radius: 30%;
+    background-color:#ffffff;
+    transform: translate(20px, 5px); 
+    transition: 0.5s;
+
+}
+
+ .img{
+    background-image:url(assets/img/comics.jpg);
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    align-items:center;
+    display: flex;
+    /* height: calc(94vh); */
+    height: auto;
+    background-position: center center;
+    background-size:cover;
+    max-width: 1234px;
+width: 100%;
+flex-direction: column;
+ }
+
+
+
+.btn{
+
+    max-width: 320px;
+    height: 70px;
+    background-color: rgb(149, 0, 0);
+    box-shadow: 1px 2px 4px 5px #ffffff;
+cursor: pointer;
+font-size: 30px;
+color: #ffffff;
+max-width: 100%;
+text-align: center;
+margin-top: 25%;
+margin-bottom: 15%;
+border-radius:200px
+}
+
+.btn:hover{
+    background: linear-gradient(165deg, rgb(143, 10, 10), rgb(212, 211, 211));
+}
+
+
+
+.text{
+    height: 140px;
+    width: 45%;
+    padding-top: 3%;
+    /* min-height: 10%; */
+    background-color:rgb(221, 190, 13);
+    font-size: 30px;
+margin: 0 auto;
+text-align: center;
+border:1px solid rgb(0, 0, 0);
+box-shadow: 1px 2px 4px 5px #000000;
+margin-top: 15%;
+align-items:center;
+opacity: 1;
+}
+.author{
+    padding: 0 10px;
+      height: 70px;
+    width: auto;
+    /* max-width: 30%; */
+    background-color:rgb(221, 190, 13);
+    font-size: 30px;
+    color: #000000;
+text-align: center;
+border:1px solid rgb(0, 0, 0);
+box-shadow: 1px 2px 4px 5px #000000;
+display: flex;
+align-items:center;
+
+justify-content: space-between;
+}
+
+
+footer{
+    display: flex;
+    margin: 0 auto;
+    
+
+
+}
+
+.footer{
+    display: flex;
+    font-size: 25px;
+    width: 1400px;
+    height: 40px;
+    margin: 0 auto;
+
+}
+.list{
+    color:#ffffff;
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    gap: 50px;
+    align-items: center;
+    width: 200px;
+    margin: 0 auto;
+    margin-left: 50px;
+
+
+}
+
+.footer-img{
+    display: flex;  
+    margin: 0 auto;
+margin-right: 10%;
+    
+}
