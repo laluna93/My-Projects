@@ -6,15 +6,58 @@ const lang = document.querySelector('.lang');
 const ru =document.querySelector('.ru');
 const be =document.querySelector('.be');
 let langs;
+const img = document.querySelector('.img');
+console.log(img)
+let n=1;
+const play = document.querySelector('.play')
+const audio = new Audio()
+
+play.addEventListener('click', ()=>{
+  play.classList.toggle('active')
+  console.log('1')
+  if(play.classList.contains('active')){
+    audio.src="./luna-snow-flow-from-marvel-super-war-soundtrack-version.mp3"
+  console.log('pause')
+  document.getElementById('img').src = './assets/svg/pause.svg'
+  audio.play()
+  }else{
+    console.log('play')
+    document.getElementById('img').src = './assets/svg/play_icon_176699.svg'
+    audio.pause()
+  }
+})
+
+function audioPlay(){
+  play.classList.add('active')
+  play.classList.remove('pause')
+  console.log('play')
+document.getElementById('img').src = './assets/svg/play_icon_176699.svg'
+audio.currentTime +=10;
+}
+function audioPause(){
+  play.classList.remove('active')
+  play.classList.add('pause')
+  console.log('play')
+  document.getElementById('img').src = './assets/svg/pause.svg'
+  
+
+}
+
 
 btn.addEventListener('click', () =>{
   btn.classList.toggle('active')
-
+  if(btn.classList.contains('btn')){
+    if(n === 24) {
+      n = 0;
+    }
+    }
   if(btn.classList.contains('active')){
     btn.classList.remove('active')
     console.log('click')
     getData()
   }
+  img.style.backgroundImage = `url(./assets/img/pictures/${n}.jpg)`;
+  console.log(++n)
 })
 let url='./quotes.json';
 
@@ -54,12 +97,8 @@ function getTranslate(langs){
 be.addEventListener('click', () => {
   url = './bquotes.json';
   getTranslate('be')
-}
-)
-
+})
 ru.addEventListener('click', () =>{
-
-
 url = './quotes.json';
   getTranslate ('ru')
 } )
