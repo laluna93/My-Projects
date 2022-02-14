@@ -74,23 +74,73 @@ padding-left: 10px;
 
 }
 
+.btnl.no-Display{
+    opacity: 0;
+    transition: 0.5s;
+
+}
+.btn-no-picture{
+    background-color:  transparent;
+    border:none;
+    cursor: pointer;
+    border-radius:20%;
+    border-radius:100%;
+    margin-bottom: 10px;
+    background-color: rgb(255, 255, 255) ;
+opacity: 0.95;
+
+}
+.btn-no-picture:active{
+    background-color:  transparent;
+    border:none;
+    cursor: pointer;
+
+}
+
+.btn-no-picture:hover{
+    box-shadow: 1px 1px 20px 15px #ffffff;
+    transition: 0.5s;
+  
+}
  .img{
     background-image:url(./assets/img/pictures/0.jpg);
     margin: 0 auto;
     background-repeat: no-repeat;
     align-items:center;
     display: flex;
-    /* height: calc(94vh); */
-    /* height: auto; */
-    height: 760px;
+    height: 740px;
     background-position: center center;
     background-size:cover;
-    max-width: 1234px;
+    max-width: 1240px;
 width: 100%;
 flex-direction: column;
  }
 
+.btn-no{
+    opacity: 0;
+    display: none;
+    transition: 0.5s;
 
+}
+
+.btn-no.active{
+    display: block;
+    opacity: 10;
+    z-index: 1;
+    width: 35%;
+    /* max-width: 320px; */
+    height: 70px;
+    background-color: rgb(149, 0, 0);
+    box-shadow: 1px 2px 4px 5px #ffffff;
+cursor: pointer;
+font-size: 30px;
+color: #ffffff;
+max-width: 100%;
+text-align: center;
+border-radius:200px;
+transition: 0.5s;
+
+}
 
 .play{
     background-color:  transparent;
@@ -108,27 +158,29 @@ flex-direction: column;
 }
 
 .play:hover{
-    box-shadow: -5px 5px 15px 20px #ffffff;
+    box-shadow: 1px 1px 20px 15px #ffffff;
+
     border:2px solid #ffffff;
     border-radius: 50px;
     background-color:#ffffff;
-    transform: translate(15px, 5px);
+    transform: translate(5px, 1px);
     transition: 0.3s;
     opacity: 0.8;
 transition: 0.8s;
 
 }
 .play.active{
-    transform: translate(10px, 2px);
+    transform: translate(5px, -12px);
 transition: 0.8s;
 width: 100px;
     height: 100px;
+    transition: 0.5s;
+
 }
 
 
 
 .btn{
-
     max-width: 320px;
     height: 70px;
     background-color: rgb(149, 0, 0);
@@ -143,15 +195,43 @@ border-radius:200px
 
 .btn:hover{
     background: linear-gradient(165deg, rgb(143, 10, 10), rgb(212, 211, 211));
+    transition: 0.5s;
+
 }
-.box-btn{
-    display: flex;
-    flex-direction: row;
-    margin-top: 5%;
-    margin-right: 11%;
-    gap: 41px;
+.btn.no-Display{
+    opacity: 0;
+    display: none;
+    transition: 0.5s;
+
 }
 
+
+
+.box-btn{
+    display: flex;
+justify-content: center;
+    flex-direction: row;
+    gap: 35px;
+    margin-top: 100px;
+}
+.author.no-Display{
+    opacity: 0;
+    z-index: -10;
+    transition: 0.5s;
+
+}
+.text.no-Display{
+    opacity: 0;
+    z-index: -10;
+    transition: 0.5s;
+
+
+}
+ .no-Display{
+    opacity: 0;
+    transition: 0.5s;
+
+}
 
 .text{
     height: 140px;
@@ -179,14 +259,13 @@ border-radius:20%;
 background: linear-gradient(360deg, rgb(30, 33, 36), rgb(255, 255, 255));
 opacity: 0.99;
 z-index: 1;
-
-
+transition: 0.5s;
 }
 .author{
     padding: 0 10px;
-      height: 70px;
+      height: 50px;
     width: auto;
-    margin-top: 10px;
+    margin-top: 20px;
     background-color:rgb(255, 255, 255);
     border-radius:10%;
     font-size: 30px;
@@ -201,7 +280,6 @@ background: linear-gradient(180deg, rgb(93, 102, 110), rgb(255, 255, 255));
 border:1px solid #ffffff;
 box-shadow: 1px 5px 4px 5px #ffffff;
 opacity: 0.8;
-
 }
 .author:hover{
     transform: scale(1.4);
@@ -210,8 +288,7 @@ background: linear-gradient(180deg, rgb(58, 59, 59), rgb(255, 255, 255));
 border:1px solid #ffffff;
 box-shadow: 1px 5px 4px 15px #ffffff;
 opacity: 0.98;
-
-
+transition: 0.5s;
 }
 
 footer{
@@ -243,10 +320,31 @@ footer{
 
 
 }
+a{
+   text-decoration: none;
+   color:#ffffff
+}
+a:hover{
+   color: rgb(167, 59, 59);
+   transition: 0.5s;
 
+}
+.rss{
+    text-decoration: none;
+    color:#ffffff   
+}
+.rss:hover{
+    color: rgb(167, 59, 59)
+  
+
+}
 .footer-img{
     display: flex;  
     margin: 0 auto;
 margin-right: 10%;
     
+}
+.footer-img:hover{
+   color: rgb(167, 59, 59)
+
 }

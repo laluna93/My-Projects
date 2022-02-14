@@ -9,45 +9,64 @@ let langs;
 const img = document.querySelector('.img');
 console.log(img)
 let n=1;
-const play = document.querySelector('.play')
+const tex = document.querySelector('.text')
+const play = document.querySelector('.play');
+const noDisplay = document.querySelector('.btn-no-picture')
 const audio = new Audio()
+const no = document.querySelector('.btn-no');
+const boxBtn=document.querySelector('.box-btn')
+audio.src="./luna-snow-flow-from-marvel-super-war-soundtrack-version.mp3"
 
-play.addEventListener('click', ()=>{
+noDisplay.addEventListener('click', ()=>{
+  noDisplay.classList.add('active');
+  console.log('active')
+  if(noDisplay.classList.contains('active')){
+    tex.classList.toggle('no-Display');
+    author.classList.toggle('no-Display');
+    btn.classList.toggle('no-Display');
+    ru.classList.toggle('no-Display');
+    be.classList.toggle('no-Display');
+    boxBtn.classList.toggle('active');
+    no.classList.toggle('active');
+  }else{}
+})
+
+no.addEventListener('click', ()=>{
+  no.classList.add('active');
+ if(no.classList.contains('btn-no')){
+      if(n === 81) {
+        n = 0;
+      }
+      }
+    if(no.classList.contains('active')){
+      console.log('click')
+    }
+    img.style.backgroundImage = `url(./assets/img/pictures/${n}.jpg)`;
+    console.log(++n)
+})
+play.addEventListener('click', ()=>{ 
   play.classList.toggle('active')
-  console.log('1')
   if(play.classList.contains('active')){
-    audio.src="./luna-snow-flow-from-marvel-super-war-soundtrack-version.mp3"
-  console.log('pause')
   document.getElementById('img').src = './assets/svg/pause.svg'
   audio.play()
+  
   }else{
-    console.log('play')
     document.getElementById('img').src = './assets/svg/play_icon_176699.svg'
     audio.pause()
   }
 })
-
-function audioPlay(){
-  play.classList.add('active')
-  play.classList.remove('pause')
-  console.log('play')
-document.getElementById('img').src = './assets/svg/play_icon_176699.svg'
-audio.currentTime +=10;
-}
-function audioPause(){
-  play.classList.remove('active')
-  play.classList.add('pause')
-  console.log('play')
-  document.getElementById('img').src = './assets/svg/pause.svg'
-  
-
-}
-
+setInterval(() => {
+  if(audio.currentTime === audio.duration) {
+    audio.play()
+  };
+  console.log(audio.currentTime);
+  console.log(audio.duration);
+},1000)
 
 btn.addEventListener('click', () =>{
   btn.classList.toggle('active')
   if(btn.classList.contains('btn')){
-    if(n === 24) {
+    if(n === 81) {
       n = 0;
     }
     }
@@ -106,10 +125,12 @@ const langObj = {
   'be': {
     'text': 'Тут будуць цытаты',
     'buttons': 'Атрымаць цытату',
+    'buttonss': 'Наступная карцінка'
   },
   'ru': {
     'text': 'Здесь будут цитаты',
     'buttons': 'Получить цитату',
+    'buttonss': 'Следующая картинка'
   }
 }
 
