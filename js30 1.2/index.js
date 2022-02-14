@@ -32,7 +32,7 @@ noDisplay.addEventListener('click', ()=>{
 no.addEventListener('click', ()=>{
   no.classList.add('active');
  if(no.classList.contains('btn-no')){
-      if(n === 88) {
+      if(n === 87) {
         n = 0;
       }
       }
@@ -47,7 +47,6 @@ play.addEventListener('click', ()=>{
   if(play.classList.contains('active')){
   document.getElementById('img').src = './assets/svg/pause.svg'
   audio.play()
-  
   }else{
     document.getElementById('img').src = './assets/svg/play_icon_176699.svg'
     audio.pause()
@@ -60,10 +59,11 @@ setInterval(() => {
   console.log(audio.currentTime);
   console.log(audio.duration);
 },1000)
+
 btn.addEventListener('click', () =>{
   btn.classList.toggle('active')
   if(btn.classList.contains('btn')){
-    if(n === 88) {
+    if(n === 87) {
       n = 0;
     }
     }
@@ -93,7 +93,8 @@ let length = data.length
 btnLang.forEach(item =>{
   item.addEventListener('click', ()=>{
     for(let i = 0; i < btnLang.length; i++){
-      btnLang[i].classList.remove('active')  
+      btnLang[i].classList.remove('active')
+      
     }
 item.classList.add('active')
   })
@@ -126,5 +127,6 @@ const langObj = {
     'buttonss': 'Следующая картинка'
   }
 }
+
 
  
