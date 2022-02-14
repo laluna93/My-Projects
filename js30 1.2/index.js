@@ -40,7 +40,6 @@ no.addEventListener('click', ()=>{
       console.log('click')
     }
     img.style.backgroundImage = `url(./assets/img/pictures/${n}.jpg)`;
-    console.log(++n)
 })
 play.addEventListener('click', ()=>{ 
   play.classList.toggle('active')
@@ -56,10 +55,7 @@ setInterval(() => {
   if(audio.currentTime === audio.duration) {
     audio.play()
   };
-  console.log(audio.currentTime);
-  console.log(audio.duration);
 },1000)
-
 btn.addEventListener('click', () =>{
   btn.classList.toggle('active')
   if(btn.classList.contains('btn')){
@@ -73,15 +69,12 @@ btn.addEventListener('click', () =>{
     getData()
   }
   img.style.backgroundImage = `url(./assets/img/pictures/${n}.jpg)`;
-  console.log(++n)
 })
 let url='./quotes.json';
 async function getData() {
     const res = await fetch(url);
     const data = await res.json();
-    console.log(data);
   console.log(data.text)
-  console.log(data[0].author)
 let length = data.length
  let randomNumber = Math.floor(Math.random(length) *  100)
  console.log(randomNumber)
@@ -94,7 +87,6 @@ btnLang.forEach(item =>{
   item.addEventListener('click', ()=>{
     for(let i = 0; i < btnLang.length; i++){
       btnLang[i].classList.remove('active')
-      
     }
 item.classList.add('active')
   })
