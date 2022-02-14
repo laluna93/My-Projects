@@ -131,10 +131,12 @@ transition: 0.5s;
     border-radius:50%;
     border:4px solid #ffffff;
     opacity: 0.8;
-    width:85px;
+    width:90px;
     height: 85px;
     bottom: 36%;
     left: 22%;
+transition: 0.5s;
+
 }
 .play:hover{
     box-shadow: 1px 1px 20px 15px #ffffff;
@@ -147,10 +149,7 @@ transition: 0.5s;
 transition: 0.8s;
 }
 .play.active{
-    transform: translate(5px, -12px);
 transition: 0.8s;
-width: 100px;
-    height: 100px;
     transition: 0.5s;
 }
 .btn{
