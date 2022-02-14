@@ -16,7 +16,6 @@ const audio = new Audio()
 const no = document.querySelector('.btn-no');
 const boxBtn=document.querySelector('.box-btn')
 audio.src="./luna-snow-flow-from-marvel-super-war-soundtrack-version.mp3"
-
 noDisplay.addEventListener('click', ()=>{
   noDisplay.classList.add('active');
   console.log('active')
@@ -30,7 +29,6 @@ noDisplay.addEventListener('click', ()=>{
     no.classList.toggle('active');
   }else{}
 })
-
 no.addEventListener('click', ()=>{
   no.classList.add('active');
  if(no.classList.contains('btn-no')){
@@ -62,7 +60,6 @@ setInterval(() => {
   console.log(audio.currentTime);
   console.log(audio.duration);
 },1000)
-
 btn.addEventListener('click', () =>{
   btn.classList.toggle('active')
   if(btn.classList.contains('btn')){
@@ -79,7 +76,6 @@ btn.addEventListener('click', () =>{
   console.log(++n)
 })
 let url='./quotes.json';
-
 async function getData() {
     const res = await fetch(url);
     const data = await res.json();
@@ -94,12 +90,10 @@ let length = data.length
  text.classList.add('active')
   }
   getData();
-
 btnLang.forEach(item =>{
   item.addEventListener('click', ()=>{
     for(let i = 0; i < btnLang.length; i++){
-      btnLang[i].classList.remove('active')
-      
+      btnLang[i].classList.remove('active')  
     }
 item.classList.add('active')
   })
@@ -112,7 +106,6 @@ function getTranslate(langs){
   getData();
   })
 }
-
 be.addEventListener('click', () => {
   url = './bquotes.json';
   getTranslate('be')
@@ -133,6 +126,5 @@ const langObj = {
     'buttonss': 'Следующая картинка'
   }
 }
-
 
  
