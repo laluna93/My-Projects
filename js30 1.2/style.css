@@ -20,44 +20,46 @@ display: flex;
     background-color:  transparent;
 border:none;
 cursor: pointer;
+margin-left: 10px;
+
 }
 .ru{
     background-color:  transparent;
     border:none;
 cursor: pointer;
 padding-left: 10px;
+margin-left: 20px;
 }
 .be:hover{
     box-shadow: 1px 2px 4px 5px #ffffff;
-    border:2px solid #ffffff;
-    border-radius: 50px;
+    border:1px solid #ffffff;
+    border-radius: 50%;
     background-color:#ffffff;
-    transform: translate(10px, 2px);
-    transition: 0.3s;
+    transform: translate(1px, 12px);
+    transition: 0.8s;
     opacity: 0.8;
 }
 .be.active{
       box-shadow: 1px 2px 4px 5px #ffffff;
-    border:2px solid #ffffff;
-    border-radius: 100%;
-    transition: 0.5s;
-    transform: translate(5px, 5px); 
+    border-radius: 50%;
+    transition: 0.8s;
+    transform: translate(1px, 1px); 
 }
 .ru:hover{
     box-shadow: 1px 2px 4px 5px #ffffff;
-    border:2px solid #ffffff;
-    border-radius: 50px;
+    border:1px solid #ffffff;
+    border-radius: 50%;
     background-color:#ffffff;
-    transform: translate(15px, 5px);
-    transition: 0.3s;
+    transform: translate(0px, 12px);
+    
+    transition: 0.8s;
     opacity: 0.8;
 }
 .ru.active{
     box-shadow: 1px 2px 4px 5px #ffffff;
-    border:2px solid #ffffff;
-    border-radius: 100%;
-    transform: translate(5px, 5px); 
-    transition: 0.5s;
+    border-radius: 50%;
+    transform: translate(0px, 1px); 
+    transition: 0.8s;
     opacity: 1;
 }
 .btnl.no-Display{
@@ -65,6 +67,7 @@ padding-left: 10px;
     transition: 0.5s;
 }
 .btn-no-picture{
+    
     background-color:  transparent;
     border:none;
     cursor: pointer;
@@ -97,15 +100,18 @@ width: 100%;
 flex-direction: column;
  }
 .btn-no{
+    max-width: 320px;
+    height: 70px;
     opacity: 0;
     display: none;
     transition: 0.5s;
 }
 .btn-no.active{
+    
     display: block;
     opacity: 10;
     z-index: 1;
-    width: 35%;
+    width: 320px;
     height: 70px;
     background-color: rgb(149, 0, 0);
     box-shadow: 1px 2px 4px 5px #ffffff;
@@ -148,14 +154,13 @@ width: 100px;
     transition: 0.5s;
 }
 .btn{
-    max-width: 320px;
+    width: 320px;
     height: 70px;
     background-color: rgb(149, 0, 0);
     box-shadow: 1px 2px 4px 5px #ffffff;
 cursor: pointer;
 font-size: 30px;
 color: #ffffff;
-max-width: 100%;
 text-align: center;
 border-radius:200px
 }
