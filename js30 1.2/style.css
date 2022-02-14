@@ -45,6 +45,11 @@ margin-left: 20px;
     transition: 0.8s;
     transform: translate(1px, 1px); 
 }
+.be.no-Display{
+    z-index: -10;
+
+}
+
 .ru:hover{
     box-shadow: 1px 2px 4px 5px #ffffff;
     border:1px solid #ffffff;
@@ -62,6 +67,11 @@ margin-left: 20px;
     transition: 0.8s;
     opacity: 1;
 }
+.ru.no-Display{
+    z-index: -10;
+
+}
+
 .btnl.no-Display{
     opacity: 0;
     transition: 0.5s;
