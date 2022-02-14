@@ -34,7 +34,7 @@ noDisplay.addEventListener('click', ()=>{
 no.addEventListener('click', ()=>{
   no.classList.add('active');
  if(no.classList.contains('btn-no')){
-      if(n === 81) {
+      if(n === 88) {
         n = 0;
       }
       }
@@ -66,7 +66,7 @@ setInterval(() => {
 btn.addEventListener('click', () =>{
   btn.classList.toggle('active')
   if(btn.classList.contains('btn')){
-    if(n === 81) {
+    if(n === 88) {
       n = 0;
     }
     }
