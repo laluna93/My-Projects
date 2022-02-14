@@ -27,7 +27,9 @@ noDisplay.addEventListener('click', ()=>{
     be.classList.toggle('no-Display');
     boxBtn.classList.toggle('active');
     no.classList.toggle('active');
-  }else{}
+  }else{
+
+  }
 })
 no.addEventListener('click', ()=>{
   no.classList.add('active');
@@ -40,7 +42,9 @@ no.addEventListener('click', ()=>{
       console.log('click')
     }
     img.style.backgroundImage = `url(./assets/img/pictures/${n}.jpg)`;
+    console.log(++n)
 })
+
 play.addEventListener('click', ()=>{ 
   play.classList.toggle('active')
   if(play.classList.contains('active')){
@@ -51,11 +55,14 @@ play.addEventListener('click', ()=>{
     audio.pause()
   }
 })
+
 setInterval(() => {
   if(audio.currentTime === audio.duration) {
     audio.play()
   };
 },1000)
+
+
 btn.addEventListener('click', () =>{
   btn.classList.toggle('active')
   if(btn.classList.contains('btn')){
@@ -69,6 +76,7 @@ btn.addEventListener('click', () =>{
     getData()
   }
   img.style.backgroundImage = `url(./assets/img/pictures/${n}.jpg)`;
+  console.log(++n)
 })
 let url='./quotes.json';
 async function getData() {
