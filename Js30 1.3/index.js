@@ -4,8 +4,8 @@ const li = document.querySelectorAll('.a');
 const squares = document.querySelectorAll('.square');
 let count = 0;
 let winCountX=[];
-let winCount0=[];
-let winCount=[];
+// let winCount0=[];
+// let winCount=[];
 let win ;
 const wins = document.querySelector('.wins');
 const text = document.querySelector('.text');
@@ -15,23 +15,25 @@ const img =document.querySelector('.img');
 const fon =document.querySelector('.fon');
 let result;
 let saves =0;
+const clear = document.querySelector('.clear');
 let saveResult = JSON.stringify(result)
-// let res = 'result';
-// li.innerHTML = res
 console.log('1')
 arr()
 
  function setLocalStorage(){
     localStorage.setItem('res',JSON.stringify (winCountX))
-    localStorage.setItem('ser', JSON.stringify(winCount0))
+    // localStorage.setItem('ser', JSON.stringify(winCount0))
+    
+// localStorage.removeItem('res')
+
  }
 window.addEventListener('beforeunload', setLocalStorage)
 
 function getLocalStorage(){
 let res= JSON.parse(localStorage.getItem('res'))
-let ser= JSON.parse(localStorage.getItem('res'))
+// let ser= JSON.parse(localStorage.getItem('res'))
 winCountX=res
-winCount0=ser
+// winCount0=ser
 arr()
 }
 window.addEventListener('load', getLocalStorage)
@@ -44,6 +46,25 @@ i.addEventListener('click',() =>{
         i.classList.remove('active')
 })
     })
+
+    clear.addEventListener('click', ()=>{
+        clear.classList.add('active')
+        if(clear.classList.contains('active')){
+            for(let i =0; i<winCountX.length;i++){
+                li[i].innerHTML =  ''
+                    }
+        }
+localStorage.removeItem('res')
+
+    })
+
+
+function audioClick(){
+    let audio=new Audio
+    audio.src = './assets/music/multyashnyiy-schelchok.mp3'
+    audio.play()
+}
+
 hero.addEventListener('click', event => {
     if (event.target.className == 'square' && event.target.textContent =='') {
         count % 2 === 0 ? event.target.innerHTML = 'X' : event.target.innerHTML = '0';
@@ -51,7 +72,16 @@ hero.addEventListener('click', event => {
         console.log(count);
         winPlayer()
     }
+    audioClick()
 })
+
+function audioWin(){
+    let audio = new Audio;
+    audio.src = './assets/music/akon_feat._pitbull_and_jermaine_dupri_-_boomerang_.mp3'
+    audio.play()
+}
+
+
 function winPlayer() {
     const square = document.querySelectorAll('.square');
     const arrWin = [
@@ -65,64 +95,85 @@ function winPlayer() {
         [2, 4, 6],
     ];
     let saves = false
-
     for (let i = 0; i < arrWin.length; i++) {
         console.log(arrWin[i])
         if (count <10 && square[arrWin[i][0]].innerHTML === 'X' && square[arrWin[i][1]].innerHTML === 'X' && square[arrWin[i][2]].innerHTML === 'X') {
-            text.innerHTML = ` WIns - X! ходов ${count}`;
-            wins.classList.toggle('active')
-            btn.classList.toggle('active')
-            game.classList.remove('active')
-            result =` WIns - X! ходов ${count}`;
+            text.innerHTML = ` Победили X! ходов ${count}`;
+            windows()
+            result =` Победили X! ходов ${count}`;
             saveResult = JSON.stringify(result)
             if( winCountX === null){
                 winCountX = []
-            winCountX.push(count)
+                
+            winCountX.push(result)
+            arr()
+            
+            }else{
+                winCountX.unshift(result)
+                audioWin()
+                arr()
+
             }
-            winCountX.push(count)
-        console.log(winCountX)
 saves =true
-        arr()
+        audioWin()
+
         break
         } else if (square[arrWin[i][0]].innerHTML === '0' && square[arrWin[i][1]].innerHTML === '0' && square[arrWin[i][2]].innerHTML === '0') {
-            text.innerHTML = ` WIns - 0! ходов ${count}`;
-            wins.classList.toggle('active');
-            btn.classList.toggle('active')
-            game.classList.remove('active')
-            result =` WIns - 0! ходов ${count}`;
+            text.innerHTML = ` Победили 0! ходов ${count}`;
+            windows()
+            result =` Победили  0! ходов ${count}`;
             saveResult = JSON.stringify(result)
-            li.innerHTML =saveResult
-saves=true
-            winCount0.push(count)
-        console.log(winCount0)
+            if( winCountX === null){
+                winCountX = []
+            winCountX.push(result)
+            }else{
+                winCountX.unshift(result)
+        audioWin()
+              
+
+            }
+        saves =true
+        arr()
+        audioWin()
         break
         }
-     
         } 
-        if(count==9 && saves==false){
-                text.innerHTML = `No WIns! ходов ${count}`;
-                                wins.classList.add('active');
-                                btn.classList.add('active')
-                                game.classList.remove('active')
-                                result = 'no WIns'
-                                saveResult = JSON.stringify(result)
-                                winCount.push(count)  
-    
+        if (count == 9 && saves == false) {
+            text.innerHTML = `Ничья! ходов ${count}`;
+            windows()
+            result = `Ничья! ходов ${count}`
+            saveResult = JSON.stringify(result)
+            if( winCountX === null){
+                winCountX = []
+            winCountX.push(result)
+        arr()
+
+            }else{
+                winCountX.unshift(result)
+        audioWin()
+        arr()
+                
+
             }
+saves =true
+        arr()
+        audioWin()
+        }
    
     localStorage.setItem('result',saveResult)
 }
 function arr(){
-    console.log(winCountX)
-    if(winCountX.length<10){
-        for(let i =1; i<winCountX.length;i++){
-            li[i].innerHTML = winCountX[i]
+    if(winCountX.length>=0){
+        for(let i =0; i<winCountX.length;i++){
+            li[i].innerHTML =  winCountX[i]
                 }
     }else{
-        for(let i =1; i<li.length;i++){
-            li[i].innerHTML = winCountX[i]
+        for(let i =0; i<li.length;i++){
+            li[i].innerHTML =winCountX[i]
                 }
     }
+    console.log(winCountX)
+
 }
 btn.addEventListener('click', ()=>{
     btn.classList.toggle('active')
@@ -133,3 +184,20 @@ btn.addEventListener('click', ()=>{
     game.classList.add('active')
 
 })
+
+function windows(){
+    wins.classList.toggle('active');
+    btn.classList.toggle('active')
+    game.classList.remove('active')
+
+}
+
+clear.addEventListener('active', ()=>{
+    clear.classList.toggle('active')
+    for(let i =0; i<winCountX.length;i++){
+        li[i].innerHTML =  winCountX[i]
+            }
+console.log('1')
+
+})
+
