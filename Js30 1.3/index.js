@@ -51,7 +51,9 @@ i.addEventListener('click',() =>{
         clear.classList.add('active')
         if(clear.classList.contains('active')){
             for(let i =0; i<winCountX.length;i++){
+                winCountX.splice(i)
                 li[i].innerHTML =  ''
+    location.reload()
                     }
         }
 localStorage.removeItem('res')
@@ -200,4 +202,3 @@ clear.addEventListener('active', ()=>{
 console.log('1')
 
 })
-
