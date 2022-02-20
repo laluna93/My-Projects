@@ -16,8 +16,6 @@ const fon =document.querySelector('.fon');
 let result;
 let saves =0;
 let saveResult = JSON.stringify(result)
-// let res = 'result';
-// li.innerHTML = res
 console.log('1')
 arr()
 
@@ -65,7 +63,6 @@ function winPlayer() {
         [2, 4, 6],
     ];
     let saves = false
-
     for (let i = 0; i < arrWin.length; i++) {
         console.log(arrWin[i])
         if (count <10 && square[arrWin[i][0]].innerHTML === 'X' && square[arrWin[i][1]].innerHTML === 'X' && square[arrWin[i][2]].innerHTML === 'X') {
@@ -77,9 +74,9 @@ function winPlayer() {
             saveResult = JSON.stringify(result)
             if( winCountX === null){
                 winCountX = []
-            winCountX.push(count)
+            winCountX.unshift(result)
             }
-            winCountX.push(count)
+            winCountX.unshift(result)
         console.log(winCountX)
 saves =true
         arr()
@@ -91,36 +88,48 @@ saves =true
             game.classList.remove('active')
             result =` WIns - 0! ходов ${count}`;
             saveResult = JSON.stringify(result)
-            li.innerHTML =saveResult
-saves=true
-            winCount0.push(count)
-        console.log(winCount0)
+            if( winCountX === null){
+                winCountX = []
+            winCountX.unshift(result)
+            }
+            winCountX.unshift(result)
+        console.log(winCountX)
+        saves =true
+        arr()
         break
         }
-     
         } 
-        if(count==9 && saves==false){
-                text.innerHTML = `No WIns! ходов ${count}`;
-                                wins.classList.add('active');
-                                btn.classList.add('active')
-                                game.classList.remove('active')
-                                result = 'no WIns'
-                                saveResult = JSON.stringify(result)
-                                winCount.push(count)  
-    
+        if (count == 9 && saves == false) {
+            text.innerHTML = `No WIns! ходов ${count}`;
+            wins.classList.toggle('active');
+            btn.classList.toggle('active')
+            game.classList.remove('active')
+            result = 'no WIns'
+            saveResult = JSON.stringify(result)
+            if( winCountX === null){
+                winCountX = []
+            winCountX.unshift(result)
             }
+            winCountX.unshift(result)
+        console.log(winCountX)
+saves =true
+        arr()
+        }
    
     localStorage.setItem('result',saveResult)
 }
+let number=0;
 function arr(){
     console.log(winCountX)
-    if(winCountX.length<10){
+    if(winCountX.length<11){
         for(let i =1; i<winCountX.length;i++){
-            li[i].innerHTML = winCountX[i]
+            li[i].innerHTML =  winCountX[i]
+            number++
                 }
     }else{
-        for(let i =1; i<li.length;i++){
-            li[i].innerHTML = winCountX[i]
+        for(let i =0; i<li.length;i++){
+            li[i].innerHTML =winCountX[i]
+            number++
                 }
     }
 }
