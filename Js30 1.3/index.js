@@ -118,8 +118,6 @@ function winPlayer() {
                 arr()
             }
 saves =true
-        audioWin()
-
         break
         } else if (square[arrWin[i][0]].innerHTML === '0' && square[arrWin[i][1]].innerHTML === '0' && square[arrWin[i][2]].innerHTML === '0') {
             text.innerHTML = ` Победили 0! Сделано ${count} ходов`;
@@ -135,7 +133,6 @@ saves =true
             }
         saves =true
         arr()
-        audioWin()
         break
         }
         } 
@@ -155,7 +152,6 @@ saves =true
             }
 saves =true
         arr()
-        audioWin()
         }
     localStorage.setItem('result',saveResult)
 }
