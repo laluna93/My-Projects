@@ -156,7 +156,7 @@ saves =true
     localStorage.setItem('result',saveResult)
 }
 function arr(){
-    if(winCountX.length>=0){
+    if(winCountX.length<10){
         for(let i =0; i<winCountX.length;i++){
             li[i].innerHTML =  winCountX[i]
                 }
@@ -164,6 +164,8 @@ function arr(){
         for(let i =0; i<li.length;i++){
             li[i].innerHTML =winCountX[i]
                 }
+                winCountX.splice(10,1)
+
     }
     console.log(winCountX)
 
@@ -187,9 +189,9 @@ function windows(){
 
 }
 
-clear.addEventListener('active', ()=>{
-    clear.classList.toggle('active')
-    for(let i =0; i<winCountX.length;i++){
-        li[i].innerHTML =  winCountX[i]
-            }
-})
+// clear.addEventListener('active', ()=>{
+//     clear.classList.toggle('active')
+//     for(let i =0; i<winCountX.length;i++){
+//         li[i].innerHTML =  winCountX[i]
+//             }
+// })
