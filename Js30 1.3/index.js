@@ -14,9 +14,11 @@ const fon =document.querySelector('.fon');
 let result;
 let saves =0;
 const clear = document.querySelector('.clear');
+const start = document.querySelector('.start');
+const btnStart = document.querySelector('.btn-start')
 let saveResult = JSON.stringify(result)
 console.log('1')
-arr()
+// arr()
 
  function setLocalStorage(){
     localStorage.setItem('res',JSON.stringify (winCountX))
@@ -29,6 +31,18 @@ winCountX=res
 arr()
 }
 window.addEventListener('load', getLocalStorage)
+
+
+btnStart.addEventListener('click', ()=>{
+    btnStart.classList.add('active')
+    if(btnStart.classList.contains('active')){
+        game.classList.add('active');
+        start.classList.toggle('active')
+        clear.classList.toggle('active')
+    }
+})
+
+
 squares.forEach(i =>{
 i.addEventListener('click',() =>{
     for(let i =0; i<squares.length;i++){
@@ -40,14 +54,16 @@ i.addEventListener('click',() =>{
 
     clear.addEventListener('click', ()=>{
         clear.classList.add('active')
-        if(clear.classList.contains('active')){
+      
             for(let i =0; i<winCountX.length;i++){
-                winCountX.splice(i)
-                li[i].innerHTML =  ''
-    location.reload()
+                li[i].innerHTML = ''
                     }
-        }
-localStorage.removeItem('res')
+                winCountX.splice(li)
+
+localStorage.removeItem('result',winCountX)
+
+// location.reload()
+
     })
 
 function audioClick(){
@@ -170,6 +186,8 @@ function windows(){
     wins.classList.toggle('active');
     btn.classList.toggle('active')
     game.classList.remove('active')
+
+    
 
 }
 

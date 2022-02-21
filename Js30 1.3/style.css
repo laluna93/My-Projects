@@ -2,6 +2,51 @@ body{
     background-color:#000;
     margin: 0 auto;
 }
+.start{
+    width: 1260px;
+    height: 720px;  
+    background-image: url(./assets/img/jpg/3.jpg);
+    background-position: center center;
+    justify-content: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    margin: 0 auto;
+}
+.btn-start{
+width: 230px;
+height: 230px;
+text-shadow: 0 0 25px rgb(255 0 255), 0 0 100px rgb(0, 0, 0), 0 0 12px rgb(217, 0, 255), 0 0 21px rgb(255 0 255), 0 0 34px rgb(255 0 255), 0 0 54px rgb(191 0 255 / 92%);
+color:rgb(255, 0, 200);
+background-image: -webkit-linear-gradient(#131518, #2c2e3f 50%, #000000 20%, #000000);
+border: 2px solid rgb(0, 0, 0);
+box-shadow:1px 3px 20px 20px rgb(255, 0, 200);
+font-size: 50px;
+display: flex;
+border-radius: 50%;
+align-items: center;
+text-align: center;
+cursor: pointer;
+margin-right: 68%;
+margin-top: 20%;
+}
+.btn-start:hover{
+    background-color: rgb(0, 0, 0, 0.8);
+    transition: 0.8s;
+    color:rgb(255, 255, 255);
+box-shadow:1px 3px 20px 20px  rgb(255, 255, 255),  0 0 25px rgb(255 0 255);
+
+}
+
+.start.active{
+    z-index: 0;
+    display: none;
+}
+.btn-start.active{
+    z-index: 0;
+    display: none;
+}
+
 .game.active{
     display: flex;
     flex-wrap: wrap;
@@ -15,6 +60,7 @@ background-size: cover;
 background-repeat: no-repeat;
 display: flex;
 flex-direction: column;
+z-index: 10;
 }
 .game{
     z-index: 0;
@@ -181,7 +227,6 @@ transition: 0.5s;
     background-repeat: no-repeat;
     display: flex;
     margin: 0 auto;
-    display: flex;
 }
 .text{
     align-items: center;
