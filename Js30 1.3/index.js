@@ -26,7 +26,7 @@ console.log('1')
 window.addEventListener('beforeunload', setLocalStorage)
 
 function getLocalStorage(){
-let res= JSON.parse(localStorage.getItem('res'))
+let res= JSON.parse(localStorage.getItem('res') || [])
 winCountX=res
 arr()
 }
@@ -111,6 +111,7 @@ function winPlayer() {
             if( winCountX === null){
                 winCountX = []
             winCountX.push(result)
+            audioWin()
             arr()
             }else{
                 winCountX.unshift(result)
@@ -127,6 +128,7 @@ saves =true
             if( winCountX === null){
                 winCountX = []
             winCountX.push(result)
+            audioWin()
             }else{
                 winCountX.unshift(result)
         audioWin()
@@ -145,6 +147,7 @@ saves =true
                 winCountX = []
             winCountX.push(result)
         arr()
+        audioWin()
             }else{
                 winCountX.unshift(result)
         audioWin()
