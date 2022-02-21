@@ -4,8 +4,6 @@ const li = document.querySelectorAll('.a');
 const squares = document.querySelectorAll('.square');
 let count = 0;
 let winCountX=[];
-// let winCount0=[];
-// let winCount=[];
 let win ;
 const wins = document.querySelector('.wins');
 const text = document.querySelector('.text');
@@ -22,22 +20,15 @@ arr()
 
  function setLocalStorage(){
     localStorage.setItem('res',JSON.stringify (winCountX))
-    // localStorage.setItem('ser', JSON.stringify(winCount0))
-    
-// localStorage.removeItem('res')
-
  }
 window.addEventListener('beforeunload', setLocalStorage)
 
 function getLocalStorage(){
 let res= JSON.parse(localStorage.getItem('res'))
-// let ser= JSON.parse(localStorage.getItem('res'))
 winCountX=res
-// winCount0=ser
 arr()
 }
 window.addEventListener('load', getLocalStorage)
-// localStorage.removeItem('res')
 squares.forEach(i =>{
 i.addEventListener('click',() =>{
     for(let i =0; i<squares.length;i++){
@@ -57,9 +48,7 @@ i.addEventListener('click',() =>{
                     }
         }
 localStorage.removeItem('res')
-
     })
-
 
 function audioClick(){
     let audio=new Audio
@@ -73,8 +62,8 @@ hero.addEventListener('click', event => {
         count++;
         console.log(count);
         winPlayer()
-    }
     audioClick()
+    }
 })
 
 function audioWin(){
@@ -82,7 +71,6 @@ function audioWin(){
     audio.src = './assets/music/akon_feat._pitbull_and_jermaine_dupri_-_boomerang_.mp3'
     audio.play()
 }
-
 
 function winPlayer() {
     const square = document.querySelectorAll('.square');
@@ -100,30 +88,27 @@ function winPlayer() {
     for (let i = 0; i < arrWin.length; i++) {
         console.log(arrWin[i])
         if (count <10 && square[arrWin[i][0]].innerHTML === 'X' && square[arrWin[i][1]].innerHTML === 'X' && square[arrWin[i][2]].innerHTML === 'X') {
-            text.innerHTML = ` Победили X! ходов ${count}`;
+            text.innerHTML = ` Победили X! Сделано ${count} ходов`;
             windows()
-            result =` Победили X! ходов ${count}`;
+            result =` Победили X! Сделано ${count} ходов`;
             saveResult = JSON.stringify(result)
             if( winCountX === null){
                 winCountX = []
-                
             winCountX.push(result)
             arr()
-            
             }else{
                 winCountX.unshift(result)
                 audioWin()
                 arr()
-
             }
 saves =true
         audioWin()
 
         break
         } else if (square[arrWin[i][0]].innerHTML === '0' && square[arrWin[i][1]].innerHTML === '0' && square[arrWin[i][2]].innerHTML === '0') {
-            text.innerHTML = ` Победили 0! ходов ${count}`;
+            text.innerHTML = ` Победили 0! Сделано ${count} ходов`;
             windows()
-            result =` Победили  0! ходов ${count}`;
+            result =` Победили  0! Сделано ${count} ходов`;
             saveResult = JSON.stringify(result)
             if( winCountX === null){
                 winCountX = []
@@ -131,8 +116,6 @@ saves =true
             }else{
                 winCountX.unshift(result)
         audioWin()
-              
-
             }
         saves =true
         arr()
@@ -141,27 +124,23 @@ saves =true
         }
         } 
         if (count == 9 && saves == false) {
-            text.innerHTML = `Ничья! ходов ${count}`;
+            text.innerHTML = `У Вас Ничья! Сделано ${count} ходов`;
             windows()
-            result = `Ничья! ходов ${count}`
+            result = `Ничья! Сделано ${count} ходов`
             saveResult = JSON.stringify(result)
             if( winCountX === null){
                 winCountX = []
             winCountX.push(result)
         arr()
-
             }else{
                 winCountX.unshift(result)
         audioWin()
         arr()
-                
-
             }
 saves =true
         arr()
         audioWin()
         }
-   
     localStorage.setItem('result',saveResult)
 }
 function arr(){
@@ -199,6 +178,4 @@ clear.addEventListener('active', ()=>{
     for(let i =0; i<winCountX.length;i++){
         li[i].innerHTML =  winCountX[i]
             }
-console.log('1')
-
 })
